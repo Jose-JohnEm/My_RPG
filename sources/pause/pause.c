@@ -9,22 +9,27 @@
 
 #include "rpg.h"
 
+void cursor_position(sfRenderWindow *window)
+{
+
+}
+
 void pause_caption(sfRenderWindow **window, sfEvent event, g_pause *content, int *i_p)
 {
     if (event.key.type == 4 && event.key.code == 27 && *i_p == 1) {
-        display_shade(content, *window);
+        init_pause_content(content, *window);
         *i_p = 2;
-        pause_animation(content, *i_p);
+        pause_animation(content, *window, *i_p);
         printf("Displayed\n");
         return;
     } else if (event.key.type == 4 && event.key.code == 27 && *i_p == 2) {
-        erase_shade(content);
         *i_p = 1;
-        pause_animation(content, *i_p);
+        pause_animation(content, *window, *i_p);
+        erase_pause_content(content);
         printf("Deleted\n");
         return;
     } else if (*i_p == 2) {
-        display_pause(*window, content);
+        display_pause(*window, content, 0);
     }
 }
 

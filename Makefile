@@ -23,8 +23,10 @@ SRC	=	main.c 	\
 
 
 PAUSE	=	sources/pause/pause.c				\
-			sources/pause/pause_animation.c	\
+			sources/pause/pause_animation.c		\
 			sources/pause/pause_content.c		\
+			sources/pause/pause_init_content.c	\
+			sources/pause/pause_text_init.c		\
  
 CC	=	@gcc
 

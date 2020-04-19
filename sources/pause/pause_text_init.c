@@ -11,7 +11,7 @@ void pause_init_text_pause(sfText **button)
 {
     sfText_setFont(*button, sfFont_createFromFile("assets/bulgati.ttf"));
     sfText_setCharacterSize(*button, 100);
-    sfText_setString(*button, "Wesh le Gang !");
+    sfText_setString(*button, "Pause");
     sfText_setColor(*button, sfWhite);
     sfText_setPosition(*button, (sfVector2f){600, 200});
 }
