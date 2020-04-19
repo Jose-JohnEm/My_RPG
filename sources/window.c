@@ -13,9 +13,10 @@ void draw_window(game_t *game, menu_t *menu)
         draw_menu(game, menu);
     if (game->game == -1 || game->game == -2)
         draw_end(game, menu);
-    if (game->game == 1) {
-        draw_inventory(game);
+    if (game->game == 1 || game->game == 2) {
         draw_pause(game);
+        if (game->game == 1)
+            draw_inventory(game);
     }
     sfRenderWindow_display(game->window);
     sfRenderWindow_clear(game->window, sfBlack);

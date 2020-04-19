@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include "game.h"
 
+#include "rpg/pause_struct.h"
+
 typedef struct game
 {
     sfRenderWindow *window;
@@ -28,7 +30,10 @@ typedef struct game
     int mute;
     player_t player;
     cloud_t cloud;
+    g_pause content;
 } game_t;
+
+#include "rpg/pause.h"
 
 void init_rpg(void);
 void get_colision(game_t *game);
@@ -55,7 +60,5 @@ void draw_hud(game_t *game, menu_t *menu);
 void init_inventory(game_t *game);
 void draw_inventory(game_t *game);
 
-
-#include "rpg/pause.h"
 
 #endif
