@@ -29,6 +29,7 @@ void pause_init_sprites(g_pause *content)
     
     sfSprite_setTexture(content->shade, content->shade_t, sfTrue);
     sfSprite_setScale(content->shade, (sfVector2f){3.75, 5.4});
+    sfSprite_setScale(content->coin, (sfVector2f){0.5, 0.5});
     sfSprite_setTexture(content->coin, content->coin_t, sfTrue);
     sfSprite_setPosition(content->shade, (sfVector2f){0, 0});
     sfSprite_setPosition(content->coin, (sfVector2f){500, 300});

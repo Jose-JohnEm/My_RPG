@@ -10,17 +10,16 @@
 void draw_window(game_t *game, menu_t *menu)
 {
     if (game->game == 0) {
-        sfRenderWindow_clear(game->window, sfBlack);
         draw_menu(game, menu);
     }
     if (game->game == -1 || game->game == -2)
         draw_end(game, menu);
     if (game->game == 1 || game->game == 2) {
         draw_pause(game);
-        draw_inventory(game);
+        //draw_inventory(game);
     }
-    printf("%d\n", game->game);
     sfRenderWindow_display(game->window);
+    sfRenderWindow_clear(game->window, sfBlack);
 }
 
 void create_window(game_t *game, menu_t *menu)
@@ -33,4 +32,5 @@ void create_window(game_t *game, menu_t *menu)
         draw_window(game, menu);
     }
     my_destroy(game);
+    return;
 }

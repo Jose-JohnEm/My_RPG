@@ -21,6 +21,7 @@ typedef struct g_pause
     sfText *menu;
     sfText *exit;
     int shade_factor;
+    int choice;
 } g_pause;
 
 #endif

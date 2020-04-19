@@ -10,5 +10,6 @@
 void my_destroy(game_t *game)
 {
     sfMusic_destroy(game->music);
+    sfRenderWindow_close(game->window);
     sfRenderWindow_destroy(game->window);
 }

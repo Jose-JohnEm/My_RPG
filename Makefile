@@ -30,7 +30,7 @@ PAUSE	=	sources/pause/pause.c				\
  
 CC	=	@gcc
 
-CFLAGS	=	-I ./includes/ -l csfml-graphics -l csfml-system -lcsfml-audio -g3 -Ofast
+CFLAGS	=	-I ./includes/ -l csfml-window -l csfml-graphics -l csfml-system -lcsfml-audio -g3 -Ofast
 
 OBJ	= 	$(SRC:.c=.o) $(PAUSE:.c=.o)
 
