@@ -19,13 +19,18 @@ SRC	=	main.c 	\
 		sources/exit.c \
 		sources/end.c	\
 		sources/start.c \
-		sources/inventory.c
+		sources/inventory.c	\
+
+
+PAUSE	=	sources/pause/pause.c				\
+			sources/pause/pause_animations.c	\
+			sources/pause/pause_content.c		\
  
 CC	=	@gcc
 
 CFLAGS	=	-I ./includes/ -l csfml-graphics -l csfml-system -lcsfml-audio -g3 -Ofast
 
-OBJ	= 	$(SRC:.c=.o)
+OBJ	= 	$(SRC:.c=.o) $(PAUSE:.c=.o)
 
 NAME	=	my_rpg
 

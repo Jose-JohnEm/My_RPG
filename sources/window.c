@@ -15,6 +15,7 @@ void draw_window(game_t *game, menu_t *menu)
         draw_end(game, menu);
     if (game->game == 1) {
         draw_inventory(game);
+        draw_pause(game);
     }
     sfRenderWindow_display(game->window);
     sfRenderWindow_clear(game->window, sfBlack);

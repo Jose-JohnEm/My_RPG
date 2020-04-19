@@ -5,6 +5,9 @@
 ** game.h
 */
 
+#ifndef GAME_H
+#define GAME_H
+
 typedef struct player
 {
     int hp;
@@ -55,3 +58,5 @@ typedef struct cloud
     sfSprite *cloud_2;
     sfSprite *cloud_3;
 } cloud_t;
+
+#endif

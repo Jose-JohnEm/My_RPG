@@ -5,6 +5,9 @@
 ** rpg.h
 */
 
+#ifndef RPG_H
+#define RPG_H
+
 #include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
@@ -51,3 +54,8 @@ void init_hud(game_t *game, menu_t *menu);
 void draw_hud(game_t *game, menu_t *menu);
 void init_inventory(game_t *game);
 void draw_inventory(game_t *game);
+
+
+#include "rpg/pause.h"
+
+#endif
