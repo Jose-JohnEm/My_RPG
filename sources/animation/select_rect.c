@@ -7,8 +7,6 @@
 
 #include "rpg.h"
 
-#include <stdio.h>
-
 int clock_gestion(sfClock **clock, int l)
 {
     float time = sfTime_asSeconds(sfClock_getElapsedTime(*clock));
@@ -35,25 +33,22 @@ void select_rect_x(g_anim **anim, int ism)
     if (ism == 1)
         (*anim)->rect.left = 420 + l * XRECT;
     else
-        (*anim)->rect.left = 30 + l * (XRECT - 5);
+        (*anim)->rect.left = 30 + l * (XRECT - 4);
 }
 
 void translate_top(g_anim **anim)
 {
-    printf("%d\n", (*anim)->way);
     if ((*anim)->way == DOWN)
         (*anim)->way = 0;
     else if ((*anim)->way == RIGHT)
         (*anim)->way = 1;
     else if ((*anim)->way == LEFT)
         (*anim)->way = 2;
-    printf("%d\n", (*anim)->way);
 }
 
 void select_rect_y(g_anim **anim, int ism)
 {
     if (ism)
         translate_top(anim);
-
     (*anim)->rect.top = 35 + (*anim)->way * YRECT;
 }

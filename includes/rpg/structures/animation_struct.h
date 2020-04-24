@@ -17,6 +17,7 @@
 
 #define XRECT 85
 #define YRECT 105
+
 typedef struct g_anim
 {
     sfSprite *perso;

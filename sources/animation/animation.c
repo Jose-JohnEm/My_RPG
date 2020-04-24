@@ -41,8 +41,10 @@ void animation(game_t *game)
 {
     int is_moving = 0;
 
-    if (game->animation == NULL)
+    if (game->animation == NULL) {
         game->animation = init_animation();
+        game->event.key.code = sfKeyDown;
+    }
     if (is_arrow_key(game->event.key.code)) {
         game->animation->way = game->event.key.code - 70;
         game->event.key.code = 0;
