@@ -45,9 +45,10 @@ void animation(game_t *game)
         game->animation = init_animation();
     if (is_arrow_key(game->event.key.code)) {
         game->animation->way = game->event.key.code - 70;
+        game->event.key.code = 0;
         is_moving = 1;
     }
     select_rect_x(&game->animation, is_moving);
-    select_rect_y(&game->animation);
+    select_rect_y(&game->animation, is_moving);
     display_anim_sets(&game->animation, &game->window);
 }

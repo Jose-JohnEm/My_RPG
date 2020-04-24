@@ -9,17 +9,17 @@
 
 #include <stdio.h>
 
-sfClock *clock_gestion(sfClock **clock, int *l)
+int clock_gestion(sfClock **clock, int l)
 {
     float time = sfTime_asSeconds(sfClock_getElapsedTime(*clock));
 
-    if (time > 1) {
-        *l++;
+    if (time > 0.10) {
+        l++;
         sfClock_restart(*clock);
     }
-    if (*l > 4)
-        *l = 0;
-    printf("%d\n", *l);
+    if (l > 3)
+        l = 0;
+    return l;
 }
 
 void select_rect_x(g_anim **anim, int ism)
@@ -31,30 +31,29 @@ void select_rect_x(g_anim **anim, int ism)
         (*anim)->clock = sfClock_create();
         cl_ok++;
     }
-    clock_gestion(&(*anim)->clock, &l);
-    //printf("%d\n", l);
-
+    l = clock_gestion(&(*anim)->clock, l);
     if (ism == 1)
-        (*anim)->rect.left = 400 + l * XRECT;
+        (*anim)->rect.left = 420 + l * XRECT;
     else
-        (*anim)->rect.left = 50 + l * XRECT;
+        (*anim)->rect.left = 30 + l * (XRECT - 5);
 }
 
 void translate_top(g_anim **anim)
 {
+    printf("%d\n", (*anim)->way);
     if ((*anim)->way == DOWN)
         (*anim)->way = 0;
-    if ((*anim)->way == RIGHT)
+    else if ((*anim)->way == RIGHT)
         (*anim)->way = 1;
-    if ((*anim)->way == LEFT)
+    else if ((*anim)->way == LEFT)
         (*anim)->way = 2;
-    if ((*anim)->way == UP)
-        (*anim)->way = 3;
+    printf("%d\n", (*anim)->way);
 }
 
-void select_rect_y(g_anim **anim)
+void select_rect_y(g_anim **anim, int ism)
 {
-    translate_top(anim);
+    if (ism)
+        translate_top(anim);
 
-    (*anim)->rect.top = 50 + (*anim)->way * YRECT;
+    (*anim)->rect.top = 35 + (*anim)->way * YRECT;
 }

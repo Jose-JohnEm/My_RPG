@@ -15,7 +15,7 @@
 #define DOWN 4
 #define LEFT 1
 
-#define XRECT 75
+#define XRECT 85
 #define YRECT 105
 typedef struct g_anim
 {
