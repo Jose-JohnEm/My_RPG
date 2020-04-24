@@ -7,33 +7,37 @@
 
 #include "rpg.h"
 
-sfClock *clock_gestion(sfClock *clock, int *l)
-{
-    float time;
+#include <stdio.h>
 
-    if (clock == NULL) {
-        clock = sfClock_create();
-        sfClock_restart(clock);
-    }
-    time = sfTime_asSeconds(sfClock_getElapsedTime(clock));
-    if (time > 0.25) {
+sfClock *clock_gestion(sfClock **clock, int *l)
+{
+    float time = sfTime_asSeconds(sfClock_getElapsedTime(*clock));
+
+    if (time > 1) {
         *l++;
-        sfClock_restart(clock);
+        sfClock_restart(*clock);
     }
-    if (*l > 3)
+    if (*l > 4)
         *l = 0;
+    printf("%d\n", *l);
 }
 
 void select_rect_x(g_anim **anim, int ism)
 {
-    static sfClock *clock;
-    int l = 0;
+    static int l = 0;
+    static char cl_ok = 0;
 
-    clock = clock_gestion(clock, &l);
+    if (cl_ok == 0) {
+        (*anim)->clock = sfClock_create();
+        cl_ok++;
+    }
+    clock_gestion(&(*anim)->clock, &l);
+    //printf("%d\n", l);
+
     if (ism == 1)
-        (*anim)->begin_r.left = 400;
+        (*anim)->rect.left = 400 + l * XRECT;
     else
-        (*anim)->begin_r.left = 10;
+        (*anim)->rect.left = 50 + l * XRECT;
 }
 
 void translate_top(g_anim **anim)
@@ -52,5 +56,5 @@ void select_rect_y(g_anim **anim)
 {
     translate_top(anim);
 
-    (*anim)->rect.top = 30 + (*anim)->way * 100;
+    (*anim)->rect.top = 50 + (*anim)->way * YRECT;
 }

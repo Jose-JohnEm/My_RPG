@@ -15,12 +15,13 @@
 #define DOWN 4
 #define LEFT 1
 
+#define XRECT 75
+#define YRECT 105
 typedef struct g_anim
 {
     sfSprite *perso;
     sfTexture *perso_t;
     sfIntRect rect;
-    sfIntRect begin_r;
     char way;
     sfClock *clock;
 } g_anim;

@@ -13,7 +13,7 @@
 
 /*------ animation.c ------*/
 void animation(game_t *game);
-void init_animation(g_anim **anim);
+g_anim *init_animation(void);
 int is_arrow_key(sfKeyCode key);
 void display_anim_sets(g_anim **anim, sfRenderWindow **win);
 

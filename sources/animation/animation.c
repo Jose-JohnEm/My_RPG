@@ -7,16 +7,19 @@
 
 #include "rpg.h"
 
-void init_animation(g_anim **anim)
+g_anim *init_animation(void)
 {
+    g_anim *new = malloc(sizeof(*new));
     char *path = "assets/sprite_perso/perso.png";
 
-    (*anim)->perso = sfSprite_create();
-    (*anim)->perso_t = sfTexture_createFromFile(path, NULL);
-    (*anim)->rect = (sfIntRect){0, 0, 50, 50};
-    sfSprite_setTexture((*anim)->perso, (*anim)->perso_t, sfFalse);
-    sfSprite_setTextureRect((*anim)->perso, (*anim)->rect);
-    (*anim)->way = DOWN;
+    new->perso = sfSprite_create();
+    new->perso_t = sfTexture_createFromFile(path, NULL);
+    new->rect = (sfIntRect){0, 0, XRECT, YRECT};
+    sfSprite_setTexture(new->perso, new->perso_t, sfFalse);
+    sfSprite_setTextureRect(new->perso, new->rect);
+    sfSprite_setPosition(new->perso, (sfVector2f){500, 500});
+    new->way = DOWN;
+    return new;
 }
 
 int is_arrow_key(sfKeyCode key)
@@ -31,7 +34,6 @@ int is_arrow_key(sfKeyCode key)
 void display_anim_sets(g_anim **anim, sfRenderWindow **win)
 {
     sfSprite_setTextureRect((*anim)->perso, (*anim)->rect);
-    sfSprite_setTexture((*anim)->perso, (*anim)->perso_t, NULL);
     sfRenderWindow_drawSprite(*win, (*anim)->perso, NULL);
 }
 
@@ -40,7 +42,7 @@ void animation(game_t *game)
     int is_moving = 0;
 
     if (game->animation == NULL)
-        init_animation(&game->animation);
+        game->animation = init_animation();
     if (is_arrow_key(game->event.key.code)) {
         game->animation->way = game->event.key.code - 70;
         is_moving = 1;
