@@ -17,6 +17,8 @@ void draw_window(game_t *game, menu_t *menu)
     if (game->game == 1 || game->game == 2) {
         draw_pause(game);
         //draw_inventory(game);
+        if (game->game == 1)
+            animation(game);
     }
     sfRenderWindow_display(game->window);
     sfRenderWindow_clear(game->window, sfBlack);

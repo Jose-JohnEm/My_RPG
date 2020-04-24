@@ -27,12 +27,15 @@ PAUSE	=	sources/pause/pause.c				\
 			sources/pause/pause_content.c		\
 			sources/pause/pause_init_content.c	\
 			sources/pause/pause_text_init.c		\
- 
+
+ANIMATION	=	sources/animation/animation.c	\
+				sources/animation/select_rect.c	\
+
 CC	=	@gcc
 
 CFLAGS	=	-I ./includes/ -l csfml-window -l csfml-graphics -l csfml-system -lcsfml-audio -g3 -Ofast
 
-OBJ	= 	$(SRC:.c=.o) $(PAUSE:.c=.o)
+OBJ	= 	$(SRC:.c=.o) $(PAUSE:.c=.o) $(ANIMATION:.c=.o)
 
 NAME	=	my_rpg
 
