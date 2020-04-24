@@ -20,6 +20,7 @@ typedef struct g_anim
     sfSprite *perso;
     sfTexture *perso_t;
     sfIntRect rect;
+    sfIntRect begin_r;
     char way;
     sfClock *clock;
 } g_anim;

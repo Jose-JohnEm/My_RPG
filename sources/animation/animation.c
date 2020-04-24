@@ -13,7 +13,7 @@ void init_animation(g_anim **anim)
 
     (*anim)->perso = sfSprite_create();
     (*anim)->perso_t = sfTexture_createFromFile(path, NULL);
-    (*anim)->rect = (sfIntRect){50, 50};
+    (*anim)->rect = (sfIntRect){0, 0, 50, 50};
     sfSprite_setTexture((*anim)->perso, (*anim)->perso_t, sfFalse);
     sfSprite_setTextureRect((*anim)->perso, (*anim)->rect);
     (*anim)->way = DOWN;
@@ -28,12 +28,24 @@ int is_arrow_key(sfKeyCode key)
     return 0;
 }
 
+void display_anim_sets(g_anim **anim, sfRenderWindow **win)
+{
+    sfSprite_setTextureRect((*anim)->perso, (*anim)->rect);
+    sfSprite_setTexture((*anim)->perso, (*anim)->perso_t, NULL);
+    sfRenderWindow_drawSprite(*win, (*anim)->perso, NULL);
+}
+
 void animation(game_t *game)
 {
+    int is_moving = 0;
+
     if (game->animation == NULL)
         init_animation(&game->animation);
-    if (is_arrow_key(game->event.key.code))
-        select_rect(game->animation);
-
-    return;
+    if (is_arrow_key(game->event.key.code)) {
+        game->animation->way = game->event.key.code - 70;
+        is_moving = 1;
+    }
+    select_rect_x(&game->animation, is_moving);
+    select_rect_y(&game->animation);
+    display_anim_sets(&game->animation, &game->window);
 }
