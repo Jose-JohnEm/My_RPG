@@ -20,7 +20,9 @@ SRC	=	main.c 	\
 		sources/end.c	\
 		sources/start.c \
 		sources/inventory.c	\
-
+		sources/my_strlen.c \
+		sources/parameters.c \
+		sources/getinfo.c
 
 PAUSE	=	sources/pause/pause.c				\
 			sources/pause/pause_animation.c		\

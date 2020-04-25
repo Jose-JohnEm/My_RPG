@@ -17,6 +17,12 @@ typedef struct player
     sfSprite *inv;
 } player_t;
 
+typedef struct params
+{
+    char *name;
+    char *key;
+} params_t;
+
 typedef struct hud
 {
     sfTexture *t_hp;

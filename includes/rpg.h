@@ -13,6 +13,7 @@
 #include <SFML/System.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "game.h"
 
 #include "rpg/pause_struct.h"
@@ -60,6 +61,8 @@ void init_hud(game_t *game, menu_t *menu);
 void draw_hud(game_t *game, menu_t *menu);
 void init_inventory(game_t *game);
 void draw_inventory(game_t *game);
-
+int set_parameters(void);
+int my_strlen(char *str);
+char *get_info(void);
 
 #endif
