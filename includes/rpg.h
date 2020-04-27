@@ -37,6 +37,7 @@ typedef struct game
     g_anim *animation;
     intro_t intro;
     params_t params;
+    sound_t sound;
 } game_t;
 
 #include "rpg/animation.h"
@@ -71,5 +72,7 @@ int my_strlen(char *str);
 char *get_info(void);
 void draw_intro(game_t *game);
 void init_intro(game_t *game);
+void skip_intro(game_t *game);
+void sound_handling(game_t *game);
 
 #endif

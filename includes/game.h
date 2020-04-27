@@ -82,4 +82,11 @@ typedef struct intro
     sfSprite *bg;
 } intro_t;
 
+typedef struct sound
+{
+    sfMusic *end;
+    sfMusic *gameover;
+    sfMusic *boss;
+} sound_t;
+
 #endif

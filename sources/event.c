@@ -36,5 +36,6 @@ void window_event(game_t *game, menu_t *menu)
         }
         if (game->game == 1)
             event_inventory(game);
+        skip_intro(game);
     }
 }

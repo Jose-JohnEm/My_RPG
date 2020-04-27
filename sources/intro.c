@@ -26,6 +26,18 @@ void init_intro(game_t *game)
     game->intro.music = sfMusic_createFromFile("assets/intro.ogg");
 }
 
+void skip_intro(game_t *game)
+{
+    if (game->game == 90 || game->game == 91) {
+        if (game->event.type == sfEvtKeyPressed
+            && game->event.key.code == sfKeySpace) {
+            game->skip_intro = 1;
+            game->game = 1;
+            sfMusic_stop(game->intro.music);
+        }
+    }
+}
+
 void timer_intro(game_t *game)
 {
     int static x = 0;
