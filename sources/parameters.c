@@ -7,21 +7,18 @@
 
 #include "rpg.h"
 
-
 int error_name(char *name)
 {
     if (name[0] == '\n') {
-        my_putstr("You need to put a name then press entry");
+        my_putstr("You need to put a name then press entry\n");
         return 0;
     }
     return 1;
 }
 
-int set_name(void)
+int set_name(game_t *game)
 {
     char *name = NULL;
-    params_t params;
-
     my_putstr("What's your name ?\n");
     name = get_info();
     if (name == NULL) {
@@ -33,15 +30,16 @@ int set_name(void)
         if (name == NULL)
             return -1;
     }
-    params.name = name;
+    game->params.name = name;
     my_putstr("Hello ");
-    my_putstr(params.name);
+    my_putstr(game->params.name);
+    my_putstr(" GL & HF !\n");
     return 0;
 }
 
-int set_parameters(void)
+int set_parameters(game_t *game)
 {
-    if (set_name() == -1)
+    if (set_name(game) == -1)
         return -1;
     return 0;
 }

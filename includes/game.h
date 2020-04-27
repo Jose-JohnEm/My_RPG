@@ -31,9 +31,9 @@ typedef struct hud
     sfSprite *mob;
     sfSprite *hp;
     sfSprite *mana;
-    sfFont* f_score;
-    sfText* score;
-    sfText* text_mob;
+    sfFont *f_score;
+    sfText *score;
+    sfText *text_mob;
 } hud_t;
 
 typedef struct menu
@@ -64,5 +64,22 @@ typedef struct cloud
     sfSprite *cloud_2;
     sfSprite *cloud_3;
 } cloud_t;
+
+typedef struct intro
+{
+    sfText *text;
+    sfText *text2;
+    sfText *text3;
+    sfText *name;
+    sfTexture *t_intro;
+    sfSprite *intro;
+    sfMusic *music;
+    sfFont *font;
+    sfClock *clock;
+    sfTime time;
+    sfUint32 seconds;
+    sfTexture *t_bg;
+    sfSprite *bg;
+} intro_t;
 
 #endif

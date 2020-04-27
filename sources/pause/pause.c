@@ -33,7 +33,8 @@ void cursor_position(sfRenderWindow *window, sfSprite *coin, int *choice)
     }
 }
 
-void pause_caption(sfRenderWindow **window, sfEvent event, g_pause *content, int *i_p)
+void pause_caption(sfRenderWindow **window, sfEvent event,
+                                g_pause *content, int *i_p)
 {
     if (event.key.type == 4 && event.key.code == 27 && *i_p == 1) {
         init_pause_content(content, *window);

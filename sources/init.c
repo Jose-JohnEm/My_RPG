@@ -29,7 +29,7 @@ void init_text(menu_t *menu)
     sfText_setCharacterSize(menu->hud.text_mob, 80);
 }
 
-void init_rpg(void)
+int init_rpg(void)
 {
     sfVideoMode mode = {1920, 1080, 32};
     game_t game;
@@ -42,7 +42,11 @@ void init_rpg(void)
     game.mute = 0;
     game.player.hp = 5;
     game.music = sfMusic_createFromFile("assets/sound.ogg");
+    if (set_parameters(&game) == -1)
+        return -1;
     init_text(&menu);
+    init_intro(&game);
     rpg(&game, &menu);
     create_window(&game, &menu);
+    return 0;
 }

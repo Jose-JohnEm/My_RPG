@@ -13,7 +13,7 @@ void pause_init_text(g_pause *content)
     content->continu = sfText_create();
     content->menu = sfText_create();
     content->exit = sfText_create();
-    
+
     pause_init_text_pause(&content->pause);
     pause_init_text_continue(&content->continu);
     pause_init_text_menu(&content->menu);
@@ -26,7 +26,7 @@ void pause_init_sprites(g_pause *content)
     content->coin_t = sfTexture_createFromFile("assets/coin.png", NULL);
     content->shade = sfSprite_create();
     content->coin = sfSprite_create();
-    
+
     sfSprite_setTexture(content->shade, content->shade_t, sfTrue);
     sfSprite_setScale(content->shade, (sfVector2f){3.75, 5.4});
     sfSprite_setScale(content->coin, (sfVector2f){0.5, 0.5});

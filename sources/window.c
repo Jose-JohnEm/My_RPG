@@ -20,6 +20,8 @@ void draw_window(game_t *game, menu_t *menu)
         if (game->game == 1)
             animation(game);
     }
+    if (game->game > 89)
+        draw_intro(game);
     sfRenderWindow_display(game->window);
     sfRenderWindow_clear(game->window, sfBlack);
 }

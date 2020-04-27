@@ -14,8 +14,14 @@ void start_game(game_t *game, menu_t *menu)
 
     if (mouse_pos.x >= (int)pos.x && mouse_pos.x <= ((int)pos.x + 361) &&
         mouse_pos.y >= ((int)pos.y) && mouse_pos.y <= ((int)pos.y + 110)) {
-        if (game->game == 0)
+        if (game->game == 0 && game->skip_intro == 0) {
+            game->game = 90;
+            sfMusic_stop(game->music);
+            sfMusic_play(game->intro.music);
+        } else {
+            sfMusic_stop(game->music);
             game->game = 1;
+        }
     }
 
 }

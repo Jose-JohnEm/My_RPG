@@ -9,7 +9,7 @@
 
 void create_menu_sprite(game_t *game, menu_t *menu)
 {
-    menu->t_title = sfTexture_createFromFile("assets/menu.png", NULL);
+    menu->t_title = sfTexture_createFromFile("assets/logo.png", NULL);
     menu->t_soundicon = sfTexture_createFromFile("assets/sound.png", NULL);
     menu->t_button = sfTexture_createFromFile("assets/htoplay.png", NULL);
     menu->t_exit = sfTexture_createFromFile("assets/exit.png", NULL);
@@ -77,7 +77,7 @@ void menu_buttons(game_t *game, menu_t *menu)
 void draw_menu(game_t *game, menu_t *menu)
 {
     sfSprite_setPosition(menu->play, (sfVector2f){750, 600});
-    sfSprite_setPosition(menu->title, (sfVector2f){600, 100});
+    sfSprite_setPosition(menu->title, (sfVector2f){750, 100});
     sfSprite_setPosition(menu->soundicon, (sfVector2f){25, 900});
     if (game->mute == 0);
         sfSprite_setTextureRect(menu->soundicon, (sfIntRect){0, 0, 175, 164});

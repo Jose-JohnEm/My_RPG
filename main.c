@@ -11,7 +11,6 @@ int main(int ac, char **av)
 {
     if (ac != 1)
         return 84;
-    if (set_parameters() == -1)
+    if (init_rpg() == -1)
         return 84;
-    init_rpg();
 }

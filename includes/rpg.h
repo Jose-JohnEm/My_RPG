@@ -29,17 +29,20 @@ typedef struct game
     sfTime time;
     sfUint32 seconds;
     int game;
+    int skip_intro;
     int mute;
     player_t player;
     cloud_t cloud;
     g_pause content;
     g_anim *animation;
+    intro_t intro;
+    params_t params;
 } game_t;
 
 #include "rpg/animation.h"
 #include "rpg/pause.h"
 
-void init_rpg(void);
+int init_rpg(void);
 void get_colision(game_t *game);
 void draw_window(game_t *game, menu_t *menu);
 void my_destroy(game_t *game);
@@ -63,8 +66,10 @@ void init_hud(game_t *game, menu_t *menu);
 void draw_hud(game_t *game, menu_t *menu);
 void init_inventory(game_t *game);
 void draw_inventory(game_t *game);
-int set_parameters(void);
+int set_parameters(game_t *game);
 int my_strlen(char *str);
 char *get_info(void);
+void draw_intro(game_t *game);
+void init_intro(game_t *game);
 
 #endif
