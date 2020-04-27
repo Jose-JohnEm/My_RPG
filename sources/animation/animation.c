@@ -41,16 +41,18 @@ void animation(game_t *game)
 {
     int is_moving = 0;
 
-    if (game->animation == NULL) {
-        game->animation = init_animation();
-        game->event.key.code = sfKeyDown;
+    if (game->game == 1) {
+        if (game->animation == NULL) {
+            game->animation = init_animation();
+            game->event.key.code = sfKeyDown;
+        }
+        if (is_arrow_key(game->event.key.code)) {
+            game->animation->way = game->event.key.code - 70;
+            game->event.key.code = 0;
+            is_moving = 1;
+        }
+        select_rect_x(&game->animation, is_moving);
+        select_rect_y(&game->animation, is_moving);
     }
-    if (is_arrow_key(game->event.key.code)) {
-        game->animation->way = game->event.key.code - 70;
-        game->event.key.code = 0;
-        is_moving = 1;
-    }
-    select_rect_x(&game->animation, is_moving);
-    select_rect_y(&game->animation, is_moving);
     display_anim_sets(&game->animation, &game->window);
 }

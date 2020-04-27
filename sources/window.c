@@ -15,10 +15,10 @@ void draw_window(game_t *game, menu_t *menu)
     if (game->game == -1 || game->game == -2)
         draw_end(game, menu);
     if (game->game == 1 || game->game == 2) {
+        draw_map(game);
         draw_pause(game);
+        animation(game);
         //draw_inventory(game);
-        if (game->game == 1)
-            animation(game);
     }
     if (game->game > 89) {
         draw_intro(game);

@@ -18,6 +18,7 @@
 
 #include "rpg/structures/pause_struct.h"
 #include "rpg/structures/animation_struct.h"
+#include "rpg/structures/map_struct.h"
 typedef struct game
 {
     sfRenderWindow *window;
@@ -35,6 +36,7 @@ typedef struct game
     cloud_t cloud;
     g_pause content;
     g_anim *animation;
+    g_map *map;
     intro_t intro;
     params_t params;
     sound_t sound;
@@ -42,6 +44,7 @@ typedef struct game
 
 #include "rpg/animation.h"
 #include "rpg/pause.h"
+#include "rpg/map.h"
 
 int init_rpg(void);
 void get_colision(game_t *game);

@@ -14,6 +14,7 @@ void rpg(game_t *game, menu_t *menu)
     init_menu(game, menu);
     init_cloud(game);
     init_inventory(game);
+    init_map(&game->map);
     game->animation = NULL;
 }
 
