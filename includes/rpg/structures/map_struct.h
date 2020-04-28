@@ -15,6 +15,7 @@ typedef struct g_map
     sfSprite *map;
     sfTexture *map_t;
     sfVector2i position;
+    int **collides;
 } g_map;
 
 #endif

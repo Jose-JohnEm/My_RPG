@@ -46,6 +46,7 @@ typedef struct game
 #include "rpg/pause.h"
 #include "rpg/map.h"
 #include "rpg/movements.h"
+#include "rpg/collision.h"
 
 int init_rpg(void);
 void get_colision(game_t *game);
