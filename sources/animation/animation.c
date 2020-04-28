@@ -53,5 +53,6 @@ void animation(game_t *game)
             move_perso(game);
         }
     }
+    check_collision(game);
     display_anim_sets(&game->animation, &game->window);
 }

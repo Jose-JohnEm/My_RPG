@@ -12,31 +12,35 @@ int len_int(int *list)
     int i = 0;
 
     for(; list[i] != -1; i++);
-    return i;
+    return i + 1;
 }
 
 int *my_pos_realloc(int *pos)
 {
     int *new = malloc(sizeof(int) * len_int(pos) + 1);
 
-    new[len_int(pos) + 1] = -1;
-    for (int i = 0; pos[i] != -1; i++)
+    new[len_int(pos)] = -1;
+    for (int i = 0; new[i] != -1; i++)
         new[i] = pos[i];
     free(pos);
     return new;
 }
 
-void set_collide(int ***col, int pos1, int pos2)
+void set_collide(int ***col, sfVector2i p1, sfVector2i p2)
 {
-    *col[pos1] = my_pos_realloc(pos1);
-    *col[pos1][pos2] = pos2;
+    int pos1 = (p1.y - 1) * 7 + p1.x - 1;
+    int pos2 = (p2.y - 1) * 7 + p2.x - 1;
+
+    printf("%d   %d    %d\n", pos1, pos2, len_int(*col[pos1]));
+    *col[pos1] = my_pos_realloc(*col[pos1]);
+    *col[pos1][len_int(*col[pos1]) - 1] = pos2;
 }
 
 int *my_pos_desalloc(int *pos, int place)
 {
     int *new = malloc(sizeof(int) * len_int(pos));
 
-    new[len_int(pos)] = -1;
+    new[len_int(pos) - 1] = -1;
     for (int i = 0, j = 0; pos[j] != -1; i++, j++) {
         if (i == place)
             j++;
@@ -46,10 +50,12 @@ int *my_pos_desalloc(int *pos, int place)
     return new;
 }
 
-void unset_collide(int ***col, int pos1, int pos2)
+void unset_collide(int ***col, sfVector2i p1, sfVector2i p2)
 {
+    int pos1 = (p1.y - 1) * 7 + p1.x;
+    int pos2 = (p2.y - 1) * 7 + p2.x;
     int i = 0;
 
-    for (; *col[pos1] != pos2; i++);
-    *col[pos1] = my_pos_desalloc(pos1, i);
+    for (; *col[pos1][i] != pos2; i++);
+    *col[pos1] = my_pos_desalloc(*col[pos1], i);
 }

@@ -12,7 +12,7 @@ int **init_collide(void)
     int **new = malloc(sizeof(int *) * 50);
 
     new[49] = NULL;
-    for (int i = 0; new[i] != NULL; i++) {
+    for (int i = 0; i < 49; i++) {
         new[i] = malloc(sizeof(int));
         new[i][0] = -1;
     }

@@ -42,6 +42,7 @@ MOVE	=	sources/movements/move.c					\
 
 COLLISION	=	sources/collision/collision.c			\
 				sources/collision/collide_settings.c	\
+				sources/collision/init_collide.c		\
 
 CC	=	@gcc
 
