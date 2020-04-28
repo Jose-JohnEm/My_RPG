@@ -9,5 +9,6 @@
 
 void draw_map(game_t *game)
 {
+    
     sfRenderWindow_drawSprite(game->window, game->map->map, NULL);
 }

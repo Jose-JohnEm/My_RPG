@@ -53,6 +53,9 @@ void animation(game_t *game)
         }
         select_rect_x(&game->animation, is_moving);
         select_rect_y(&game->animation, is_moving);
+        if (is_moving) {
+            move_perso(game);
+        }
     }
     display_anim_sets(&game->animation, &game->window);
 }
