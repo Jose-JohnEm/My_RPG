@@ -14,7 +14,7 @@ typedef struct g_map
 {
     sfSprite *map;
     sfTexture *map_t;
-    sfIntRect rect;
+    sfVector2i position;
 } g_map;
 
 #endif

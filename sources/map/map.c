@@ -9,6 +9,6 @@
 
 void draw_map(game_t *game)
 {
-    
+    move_map(game, move_perso_in_map(game));
     sfRenderWindow_drawSprite(game->window, game->map->map, NULL);
 }

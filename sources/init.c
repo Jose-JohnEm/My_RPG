@@ -15,7 +15,8 @@ void rpg(game_t *game, menu_t *menu)
     init_cloud(game);
     init_inventory(game);
     init_map(&game->map);
-    game->animation = NULL;
+    game->animation = init_animation();
+    game->event.key.code = sfKeyDown;
 }
 
 void init_text(menu_t *menu)

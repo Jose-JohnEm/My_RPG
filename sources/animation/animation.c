@@ -17,7 +17,7 @@ g_anim *init_animation(void)
     new->rect = (sfIntRect){0, 0, XRECT, YRECT};
     sfSprite_setTexture(new->perso, new->perso_t, sfFalse);
     sfSprite_setTextureRect(new->perso, new->rect);
-    sfSprite_setPosition(new->perso, (sfVector2f){500, 500});
+    sfSprite_setPosition(new->perso, (sfVector2f){700, 500});
     new->way = DOWN;
     return new;
 }
@@ -42,10 +42,6 @@ void animation(game_t *game)
     int is_moving = 0;
 
     if (game->game == 1) {
-        if (game->animation == NULL) {
-            game->animation = init_animation();
-            game->event.key.code = sfKeyDown;
-        }
         if (is_arrow_key(game->event.key.code)) {
             game->animation->way = game->event.key.code - 70;
             game->event.key.code = 0;
