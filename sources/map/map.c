@@ -14,11 +14,11 @@ void collide_big_walls(game_t *game)
 
     if (u_p.x < SQ_L + 70 && m_p.x == 1)
         sfSprite_move(game->animation->perso, (sfVector2f){10, 0});
-    if (u_p.x > SQ_R && m_p.x == 5)
+    if (u_p.x > SQ_R && m_p.x == 7)
         sfSprite_move(game->animation->perso, (sfVector2f){-10, 0});
     if (u_p.y < SQ_U + 80 && m_p.y == 1)
         sfSprite_move(game->animation->perso, (sfVector2f){0, 10});
-    if (u_p.y > SQ_D + 10 && m_p.y == 5)
+    if (u_p.y > SQ_D + 10 && m_p.y == 7)
         sfSprite_move(game->animation->perso, (sfVector2f){0, -10});
 }
 

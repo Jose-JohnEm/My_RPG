@@ -26,19 +26,22 @@ SRC	=	main.c 	\
 		sources/intro.c \
 		sources/sound.c
 
-PAUSE	=	sources/pause/pause.c				\
-			sources/pause/pause_animation.c		\
-			sources/pause/pause_content.c		\
-			sources/pause/pause_init_content.c	\
-			sources/pause/pause_text_init.c		\
+PAUSE	=	sources/pause/pause.c						\
+			sources/pause/pause_animation.c				\
+			sources/pause/pause_content.c				\
+			sources/pause/pause_init_content.c			\
+			sources/pause/pause_text_init.c				\
 
-ANIMATION	=	sources/animation/animation.c	\
-				sources/animation/select_rect.c	\
+ANIMATION	=	sources/animation/animation.c			\
+				sources/animation/select_rect.c			\
 
-MAP		=	sources/map/map.c					\
-			sources/map/init_map.c				\
+MAP		=	sources/map/map.c							\
+			sources/map/init_map.c						\
 
-MOVE	=	sources/movements/move.c			\
+MOVE	=	sources/movements/move.c					\
+
+COLLISION	=	sources/collision/collision.c			\
+				sources/collision/collide_settings.c	\
 
 CC	=	@gcc
 
@@ -49,6 +52,7 @@ OBJ	= 	$(SRC:.c=.o)		\
 		$(ANIMATION:.c=.o)	\
 		$(MAP:.c=.o)		\
 		$(MOVE:.c=.o)		\
+		$(COLLISION:.c=.o)	\
 
 NAME	=	my_rpg
 
