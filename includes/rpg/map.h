@@ -18,5 +18,8 @@ void draw_map(game_t *game);
 
 /* ----- init_map.c ---- */
 void init_map(g_map **map);
+void collide_small_walls(game_t *game);
+void collide_big_walls(game_t *game);
+
 
 #endif

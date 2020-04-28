@@ -19,7 +19,6 @@
 #include "rpg/structures/pause_struct.h"
 #include "rpg/structures/animation_struct.h"
 #include "rpg/structures/map_struct.h"
-#include "rpg/structures/movements_struct.h"
 typedef struct game
 {
     sfRenderWindow *window;
