@@ -24,9 +24,11 @@ void apply_collide(sfSprite **user, char way)
 
 int should_collide(int x, int y, sfVector2f pos_u)
 {
-    if (pos_u.y > SQ_U + y * 90 && pos_u.y < SQ_U + (y + 1) * 90)
-        if (pos_u.x > SQ_L + x * 90 && pos_u.x < SQ_L + (x + 1) * 90)
+    if (pos_u.y > (SQ_U + y * 90) - 50 && pos_u.y < (SQ_U + (y + 1) * 90) + 50)
+        if (pos_u.x > (SQ_L + x * 90) - 50 && pos_u.x < (SQ_L + (x + 1) * 90) + 50) {
+            printf("x: %d   y: %d\n", x, y);
             return 1;
+        }
     return 0;
 }
 
@@ -38,8 +40,7 @@ void check_collision(game_t *game)
     int zone = (game->map->position.y - 1) * 7 + game->map->position.x - 1;
 
     for (int i = 0; pos_c[zone][i] != -1; i++) {
-        if (should_collide(pos_c[zone][i] / 7, pos_c[zone][i] % 7, pos_u))
+        if (should_collide((pos_c[zone][i] + 1) / 7, (pos_c[zone][i] + 1) % 7, pos_u))
             apply_collide(&game->animation->perso, way);
-        printf("%d\n", i);
     }
 }
