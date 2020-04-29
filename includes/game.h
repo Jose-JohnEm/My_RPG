@@ -26,14 +26,18 @@ typedef struct params
 typedef struct hud
 {
     sfTexture *t_hp;
+    sfTexture *t_fullhp;
     sfTexture *t_mana;
-    sfTexture *t_mob;
-    sfSprite *mob;
+    sfTexture *t_isalive;
+    sfTexture *t_lvl;
     sfSprite *hp;
+    sfSprite *is_alive;
+    sfSprite *fullhp;
     sfSprite *mana;
-    sfFont *f_score;
+    sfSprite *lvl;
+    sfFont *f_lvl;
     sfText *score;
-    sfText *text_mob;
+    sfText *textlvl;
 } hud_t;
 
 typedef struct menu

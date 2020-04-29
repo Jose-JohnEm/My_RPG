@@ -6,25 +6,27 @@
 ##
 
 
-SRC	=	main.c 	\
-		sources/my_putstr.c	\
-		sources/my_putchar.c	\
-		sources/init.c	\
-		sources/destroy.c	\
-		sources/window.c 	\
-		sources/menu.c 	\
-		sources/event.c	\
-		sources/music.c \
-		sources/cloud.c \
-		sources/exit.c \
-		sources/end.c	\
-		sources/start.c \
-		sources/inventory.c	\
-		sources/my_strlen.c \
-		sources/parameters.c \
-		sources/getinfo.c \
-		sources/intro.c \
-		sources/sound.c
+SRC	=		main.c 	\
+			sources/my_putstr.c	\
+			sources/my_putchar.c	\
+			sources/init.c	\
+			sources/destroy.c	\
+			sources/window.c 	\
+			sources/menu.c 	\
+			sources/event.c	\
+			sources/music.c \
+			sources/cloud.c \
+			sources/exit.c \
+			sources/end.c	\
+			sources/start.c \
+			sources/inventory.c	\
+			sources/my_strlen.c \
+			sources/parameters.c \
+			sources/getinfo.c \
+			sources/intro.c \
+			sources/sound.c
+
+PLAYER 	= 	sources/player/hud.c
 
 PAUSE	=	sources/pause/pause.c				\
 			sources/pause/pause_animation.c		\
@@ -49,6 +51,7 @@ OBJ	= 	$(SRC:.c=.o)		\
 		$(ANIMATION:.c=.o)	\
 		$(MAP:.c=.o)		\
 		$(MOVE:.c=.o)		\
+		$(PLAYER:.c=.o)		\
 
 NAME	=	my_rpg
 
