@@ -14,7 +14,7 @@ int **init_collide(void)
     new[49] = NULL;
     for (int i = 0; i < 49; i++) {
         new[i] = malloc(sizeof(int));
-        new[i][0] = -1;
+        new[i][0] = 0;
     }
     return new;
 }

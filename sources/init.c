@@ -17,7 +17,10 @@ void rpg(game_t *game, menu_t *menu)
     init_map(&game->map);
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
-    set_collide(game->map->collides, (sfVector2i){1, 1}, (sfVector2i){4, 4});
+    set_collide(&game->map->collides, (sfVector2i){1, 1}, (sfVector2i){4, 4});
+    set_collide(&game->map->collides, (sfVector2i){1, 1}, (sfVector2i){4, 5});
+    set_collide(&game->map->collides, (sfVector2i){1, 1}, (sfVector2i){4, 6});
+    set_collide(&game->map->collides, (sfVector2i){1, 1}, (sfVector2i){4, 7});
 }
 
 void init_text(menu_t *menu)
