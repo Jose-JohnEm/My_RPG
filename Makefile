@@ -26,7 +26,8 @@ SRC	=		main.c 	\
 			sources/intro.c \
 			sources/sound.c
 
-PLAYER 	= 	sources/player/hud.c
+PLAYER 	= 	sources/player/hud.c				\
+			sources/player/player.c
 
 PAUSE	=	sources/pause/pause.c				\
 			sources/pause/pause_animation.c		\

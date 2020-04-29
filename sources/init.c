@@ -15,6 +15,7 @@ void rpg(game_t *game, menu_t *menu)
     init_cloud(game);
     init_inventory(game);
     init_map(&game->map);
+    init_player(game);
     init_hud(game);
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
@@ -24,9 +25,13 @@ void init_text(menu_t *menu)
 {
     menu->hud.f_lvl = sfFont_createFromFile("assets/score.ttf");
     menu->hud.textlvl = sfText_create();
+    menu->hud.score = sfText_create();
     sfText_setString(menu->hud.textlvl, "LVL : 1");
     sfText_setFont(menu->hud.textlvl, menu->hud.f_lvl);
+    sfText_setString(menu->hud.score, "SCORE : 540");
+    sfText_setFont(menu->hud.score, menu->hud.f_lvl);
     sfText_setCharacterSize(menu->hud.textlvl, 150);
+    sfText_setCharacterSize(menu->hud.score, 150);
 }
 
 int init_rpg(void)
