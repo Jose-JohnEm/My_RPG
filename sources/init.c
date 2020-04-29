@@ -28,7 +28,7 @@ void init_text(menu_t *menu)
     menu->hud.score = sfText_create();
     sfText_setString(menu->hud.textlvl, "LVL : 1");
     sfText_setFont(menu->hud.textlvl, menu->hud.f_lvl);
-    sfText_setString(menu->hud.score, "SCORE : 540");
+    sfText_setString(menu->hud.score, "SCORE : 5403");
     sfText_setFont(menu->hud.score, menu->hud.f_lvl);
     sfText_setCharacterSize(menu->hud.textlvl, 150);
     sfText_setCharacterSize(menu->hud.score, 150);
