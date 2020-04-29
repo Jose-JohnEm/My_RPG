@@ -77,7 +77,7 @@ void menu_buttons(game_t *game, menu_t *menu)
 void draw_menu(game_t *game, menu_t *menu)
 {
     sfSprite_setPosition(menu->play, (sfVector2f){750, 600});
-    sfSprite_setPosition(menu->title, (sfVector2f){750, 100});
+    sfSprite_setPosition(menu->title, (sfVector2f){720, 100});
     sfSprite_setPosition(menu->soundicon, (sfVector2f){25, 900});
     if (game->mute == 0);
         sfSprite_setTextureRect(menu->soundicon, (sfIntRect){0, 0, 175, 164});
