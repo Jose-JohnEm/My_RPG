@@ -9,8 +9,8 @@
 
 int is_hitting(sfVector2f u_pos, sfVector2f e_pos)
 {
-    if (u_pos.y < e_pos.y && e_pos.y < u_pos.y + 150)
-        if (u_pos.x < e_pos.x && e_pos.x < u_pos.x + 150)
+    if (e_pos.y + 75 > u_pos.y && e_pos.y - 75 < u_pos.y)
+        if (e_pos.x + 75 > u_pos.x && e_pos.x - 75 < u_pos.x)
             return 1;
     return 0;
 }
@@ -26,7 +26,7 @@ void does_hit(game_t *game)
         e_pos = sfSprite_getPosition(game->ennemy[i].mob);
         mob = game->ennemy[i].pos;
         if (is_hitting(u_pos, e_pos) && mob.x1 + 1 == map.y && mob.y1 + 1 == map.y)
-            game->player.hp -= 50;
+            game->player.hp -= 1;
     }
 }
 
