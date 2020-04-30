@@ -45,7 +45,8 @@ MOVE	=	sources/movements/move.c					\
 
 COLLISION	=	sources/collision/collision.c			\
 				sources/collision/collide_settings.c	\
-				sources/collision/init_collide.c		\
+
+ENNEMY		=	sources/ennemy/ennemy.c					\
 
 CC	=	@gcc
 
@@ -58,6 +59,7 @@ OBJ	= 	$(SRC:.c=.o)		\
 		$(MOVE:.c=.o)		\
 		$(PLAYER:.c=.o)		\
 		$(COLLISION:.c=.o)	\
+		$(ENNEMY:.c=.o)		\
 
 NAME	=	my_rpg
 

@@ -24,8 +24,4 @@ void my_strcpy(char *s1, char const *s2);
 char *my_strdup(char *str);
 
 
-/* ---- init_collide.c ---- */
-int **init_collide(void);
-
-
 #endif
