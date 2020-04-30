@@ -43,9 +43,10 @@ void timer_intro(game_t *game)
     int static x = 0;
     game->intro.time = sfClock_getElapsedTime(game->intro.clock);
 
-    sfSprite_setTextureRect(game->intro.intro, (sfIntRect){x, 0, 1382, 958});
+    sfSprite_setTextureRect(game->intro.intro, (sfIntRect){x, 0, 1382, 1212});
     if (game->intro.time.microseconds > game->intro.seconds) {
-        sfSprite_setTextureRect(game->intro.intro,(sfIntRect){x, 0, 1382,958});
+        sfSprite_setTextureRect(game->intro.intro,
+            (sfIntRect) {x, 0, 1382, 1212});
         if (x == 0)
             game->game = 91;
         if (x >= 1382 * 3) {

@@ -18,6 +18,7 @@ void draw_window(game_t *game, menu_t *menu)
         draw_map(game);
         draw_pause(game);
         animation(game);
+        draw_hud(game);
         //draw_inventory(game);
     }
     if (game->game > 89) {

@@ -36,7 +36,6 @@ void draw_end(game_t *game, menu_t *menu)
         sfSprite_setTextureRect(menu->soundicon, (sfIntRect){177, 0, 165, 164});
     sfRenderWindow_drawSprite(game->window, menu->bg, NULL);
     draw_cloud(game);
-    menu_buttons(game, menu);
     sfRenderWindow_drawSprite(game->window, menu->logo, NULL);
     sfRenderWindow_drawText(game->window, menu->hud.score, NULL);
     sfRenderWindow_drawSprite(game->window, menu->soundicon, NULL);

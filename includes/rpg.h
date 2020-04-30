@@ -33,6 +33,7 @@ typedef struct game
     int skip_intro;
     int mute;
     player_t player;
+    hud_t hud;
     cloud_t cloud;
     g_pause content;
     g_anim *animation;
@@ -67,8 +68,8 @@ void menu_buttons(game_t *game, menu_t *menu);
 void init_end(game_t *game, menu_t *menu);
 void draw_end(game_t *game, menu_t *menu);
 int read_map(char *file_path, game_t *game);
-void init_hud(game_t *game, menu_t *menu);
-void draw_hud(game_t *game, menu_t *menu);
+void init_hud(game_t *game);
+void draw_hud(game_t *game);
 void init_inventory(game_t *game);
 void draw_inventory(game_t *game);
 int set_parameters(game_t *game);
@@ -78,5 +79,6 @@ void draw_intro(game_t *game);
 void init_intro(game_t *game);
 void skip_intro(game_t *game);
 void sound_handling(game_t *game);
+void init_player(game_t * game);
 
 #endif
