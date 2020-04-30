@@ -42,6 +42,7 @@ typedef struct game
     sound_t sound;
 } game_t;
 
+#include "rpg/map_collision.h"
 #include "rpg/animation.h"
 #include "rpg/pause.h"
 #include "rpg/map.h"

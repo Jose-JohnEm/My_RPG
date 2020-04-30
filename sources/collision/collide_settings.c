@@ -55,9 +55,10 @@ char **set_collide(char **col, vec4 pos)
     return new;
 }
 
-void unset_collide(g_map **col, vec4 pos)
+char **unset_collide(char **col, vec4 pos)
 {
     char to_find[6];
+    char **new = NULL;
     int i = 0;
 
     to_find[0] = pos.x1 + '0';
@@ -67,9 +68,13 @@ void unset_collide(g_map **col, vec4 pos)
     to_find[4] = pos.y2 + '0';
     to_find[5] = '\0';
 
-    for (; my_strcmp((*col)->collides[i], to_find); i++);
-    free((*col)->collides[i++]);
-    for (; (*col)->collides[i] != NULL; i++)
-        (*col)->collides[i - 1] = (*col)->collides[i];
-    (*col)->collides[i - 1] = NULL;
+    for (; col[i] != NULL; i++);
+    new = malloc(sizeof(char *) * i);
+
+    for (; !my_strcmp(col[i], to_find); i++)
+        new[i] = my_strdup(col[i]);
+    for (; col[i] != NULL; i++)
+        new[i] = my_strdup(col[i + 1]);
+    col = NULL;
+    return new;
 }

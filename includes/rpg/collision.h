@@ -18,7 +18,7 @@ void apply_collide(sfSprite **user, char way);
 
 /* ---- collide_settings.c ---- */
 char **set_collide(char **col, vec4 pos);
-void unset_collide(g_map **col, vec4 pos);
+char **unset_collide(char **col, vec4 pos);
 int my_strcmp(char const *s1, char const *s2);
 void my_strcpy(char *s1, char const *s2);
 char *my_strdup(char *str);

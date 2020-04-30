@@ -17,20 +17,7 @@ void rpg(game_t *game, menu_t *menu)
     init_map(&game->map);
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
-    game->map->collides = set_collide(game->map->collides, (vec4){0, 0, 4, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){0, 0, 5, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){0, 0, 6, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){0, 1, 4, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){0, 1, 5, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){0, 1, 6, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){1, 0, 4, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){1, 0, 5, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){1, 0, 6, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){1, 1, 4, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){1, 1, 5, 5});
-    game->map->collides = set_collide(game->map->collides, (vec4){1, 1, 6, 5});
-    for (int i = 0; game->map->collides[i]; i++)
-        printf("%s\n", game->map->collides[i]);
+    map_col();
 }
 
 void init_text(menu_t *menu)
