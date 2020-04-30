@@ -30,15 +30,15 @@ int *my_pos_realloc(int **pos, int len)
     new[len + 1] = -1;
     free(*pos);
     return new;
-
 }
 
 void set_collide(int ***col, sfVector2i p1, sfVector2i p2)
 {
     int pos1 = (p1.y - 1) * 7 + p1.x - 1;
     int pos2 = (p2.y - 1) * 7 + p2.x - 1;
-    static int cur[49];
+    static int cur[50];
 
+    printf("CUR : %d\n", cur[pos1]);
     *col[pos1] = my_pos_realloc(&*col[pos1], cur[pos1]);
     printf("case : %d    number : %d\n\n", cur[pos1], pos2);
     *col[pos1][cur[pos1]] = pos2;
