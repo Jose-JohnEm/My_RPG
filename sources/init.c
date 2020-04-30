@@ -17,6 +17,7 @@ void rpg(game_t *game, menu_t *menu)
     init_map(&game->map);
     init_player(game);
     init_hud(game);
+    game->ennemy = init_ennemy();
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
     map_col();
