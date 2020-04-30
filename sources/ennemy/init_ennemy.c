@@ -7,14 +7,18 @@
 
 #include "rpg.h"
 
-g_ennemy init_from_type(char type)
+g_ennemy init_skull()
 {
     g_ennemy mob;
 
     mob.pv = 50;
     mob.mob = sfSprite_create();
     mob.mob_t = sfTexture_createFromFile("", NULL);
-    return mob;
+}
+
+g_ennemy init_from_type(char type)
+{
+    if (type == MONSTERS)
 }
 
 g_ennemy *init_ennemy(void)
