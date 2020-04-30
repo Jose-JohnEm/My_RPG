@@ -11,6 +11,7 @@
 #define ENNEMY_H
 
 /*-------- ennemy.c ---------*/
+void ennemy(game_t *game);
 
 
 /*------ init_ennemy.c ------*/

@@ -11,7 +11,7 @@
 #define ENNEMY_STRUCT_H
 
 #define SKULL_BOW 1
-#define MONSTERS 2
+#define MONSTERS 3
 
 typedef struct g_ennemy
 {
@@ -20,6 +20,7 @@ typedef struct g_ennemy
     vec4 pos;
     sfSprite *mob;
     sfTexture *mob_t;
+    sfIntRect rect;
 } g_ennemy;
 
 #endif

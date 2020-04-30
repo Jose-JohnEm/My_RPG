@@ -51,6 +51,7 @@ typedef struct game
 #include "rpg/map.h"
 #include "rpg/movements.h"
 #include "rpg/collision.h"
+#include "rpg/ennemy.h"
 
 int init_rpg(void);
 void get_colision(game_t *game);

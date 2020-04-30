@@ -47,6 +47,7 @@ COLLISION	=	sources/collision/collision.c			\
 				sources/collision/collide_settings.c	\
 
 ENNEMY		=	sources/ennemy/ennemy.c					\
+				sources/ennemy/init_ennemy.c			\
 
 CC	=	@gcc
 
