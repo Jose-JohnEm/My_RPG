@@ -17,11 +17,11 @@ void apply_collide(sfSprite **user, char way);
 
 
 /* ---- collide_settings.c ---- */
-void set_collide(int ***col, sfVector2i p1, sfVector2i p2);
-void unset_collide(int ***col, sfVector2i p1, sfVector2i p2);
-int *my_pos_desalloc(int *pos, int place);
-int *my_pos_realloc(int **pos, int len);
-int len_int(int *list);
+char **set_collide(char **col, vec4 pos);
+void unset_collide(g_map **col, vec4 pos);
+int my_strcmp(char const *s1, char const *s2);
+void my_strcpy(char *s1, char const *s2);
+char *my_strdup(char *str);
 
 
 /* ---- init_collide.c ---- */

@@ -36,14 +36,14 @@ void check_collision(game_t *game)
 {
     char way = game->animation->way;
     sfVector2f pos_u = sfSprite_getPosition(game->animation->perso);
-    int **pos_c = game->map->collides;
+    char **pos_c = game->map->collides;
     int zone = (game->map->position.y - 1) * 7 + game->map->position.x - 1;
 
-    for (int i = 0; pos_c[zone][i] != -1; i++) {
-        if (should_collide((pos_c[zone][i] / 7) + 1, (pos_c[zone][i] % 7) + 1, pos_u)) {
-            printf("base = %d\n", pos_c[zone][i]);
-            apply_collide(&game->animation->perso, way);
-            return;
-        }
+    for (int i = 0; pos_c[i] != NULL; i++) {
+        if ((pos_c[i][0] - '0') * 7 + pos_c[i][1] - '0' == zone)
+            if (should_collide(pos_c[i][3] - '0', pos_c[i][4] - '0', pos_u)) {
+                apply_collide(&game->animation->perso, way);
+                return;
+            }
     }
 }

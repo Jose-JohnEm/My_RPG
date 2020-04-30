@@ -7,64 +7,69 @@
 
 #include "rpg.h"
 
-int len_int(int *list)
+char *my_strdup(char *str)
 {
     int i = 0;
+    char *res = malloc(sizeof(char) * my_strlen(str) + 1);
 
-    for(; list[i] != -1; i++);
-    return i + 1;
+    my_strcpy(res, str);
+    free(str);
+    return (res);
 }
 
-int *my_pos_realloc(int **pos, int len)
+void my_strcpy(char *s1, char const *s2)
 {
-    int *new = malloc(sizeof(int) * (len + 1) + 1);
     int i = 0;
 
-    new[0] = 0;
-    printf("List = ");
-    for (int x = 0;  x <= len; x++)
-        printf("%d ", *pos[x]);
-    printf("\n");
-    for (; i <= len; i++)
-        new[i] = *pos[i];
-    new[len + 1] = -1;
-    free(*pos);
+    for (; s2[i] != '\0'; i++)
+        s1[i] = s2[i];
+    s1[i] = '\0';
+}
+
+int my_strcmp(char const *s1, char const *s2)
+{
+    for (int i = 0; s1[i] == s2[i]; i++)
+        if (s1[i] == '\0' && s2[i] == '\0')
+            return 1;
+    return 0;
+}
+
+char **set_collide(char **col, vec4 pos)
+{
+    int i = 0;
+    char **new = NULL;
+
+    for (; col[i] != NULL; i++);
+    new = malloc(sizeof(char *) * (i + 2));
+    for (i = 0; col[i] != NULL; i++)
+        new[i] = my_strdup(col[i]);
+    new[i] = malloc(6);
+    new[i][0] = pos.x1 + '0';
+    new[i][1] = pos.y1 + '0';
+    new[i][2] = ':';
+    new[i][3] = pos.x2 + '0';
+    new[i][4] = pos.y2 + '0';
+    new[i][5] = '\0';
+    new[i + 1] = NULL;
+    free(col);
     return new;
 }
 
-void set_collide(int ***col, sfVector2i p1, sfVector2i p2)
+void unset_collide(g_map **col, vec4 pos)
 {
-    int pos1 = (p1.y - 1) * 7 + p1.x - 1;
-    int pos2 = (p2.y - 1) * 7 + p2.x - 1;
-    static int cur[50];
-
-    printf("CUR : %d\n", cur[pos1]);
-    *col[pos1] = my_pos_realloc(&*col[pos1], cur[pos1]);
-    printf("case : %d    number : %d\n\n", cur[pos1], pos2);
-    *col[pos1][cur[pos1]] = pos2;
-    cur[pos1]++;
-}
-
-int *my_pos_desalloc(int *pos, int place)
-{
-    int *new = malloc(sizeof(int) * len_int(pos));
-
-    new[len_int(pos) - 1] = -1;
-    for (int i = 0, j = 0; pos[j] != -1; i++, j++) {
-        if (i == place)
-            j++;
-        new[i] = pos[j];
-    }
-    free(pos);
-    return new;
-}
-
-void unset_collide(int ***col, sfVector2i p1, sfVector2i p2)
-{
-    int pos1 = (p1.y - 1) * 7 + p1.x;
-    int pos2 = (p2.y - 1) * 7 + p2.x;
+    char to_find[6];
     int i = 0;
 
-    for (; *col[pos1][i] != pos2; i++);
-    *col[pos1] = my_pos_desalloc(*col[pos1], i);
+    to_find[0] = pos.x1 + '0';
+    to_find[1] = pos.y1 + '0';
+    to_find[2] = ':';
+    to_find[3] = pos.x2 + '0';
+    to_find[4] = pos.y2 + '0';
+    to_find[5] = '\0';
+
+    for (; my_strcmp((*col)->collides[i], to_find); i++);
+    free((*col)->collides[i++]);
+    for (; (*col)->collides[i] != NULL; i++)
+        (*col)->collides[i - 1] = (*col)->collides[i];
+    (*col)->collides[i - 1] = NULL;
 }
