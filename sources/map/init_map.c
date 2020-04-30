@@ -15,6 +15,8 @@ void init_map(g_map **map)
     sfSprite_setTexture((*map)->map, (*map)->map_t, sfFalse);
     sfSprite_setPosition((*map)->map, (sfVector2f){400, 90});
     sfSprite_setScale((*map)->map, (sfVector2f){1.5, 1.5});
+    (*map)->collides = malloc(sizeof(char *));
+    (*map)->collides[0] = NULL;
     (*map)->position.x = 1;
     (*map)->position.y = 1;
 }

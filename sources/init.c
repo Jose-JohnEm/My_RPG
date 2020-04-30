@@ -19,6 +19,7 @@ void rpg(game_t *game, menu_t *menu)
     init_hud(game);
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
+    map_col();
 }
 
 void init_text(menu_t *menu)
