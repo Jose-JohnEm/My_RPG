@@ -25,7 +25,8 @@ void apply_collide(sfSprite **user, char way)
 int should_collide(int y, int x, sfVector2f pos_u)
 {
     if (pos_u.y > (SQ_U + y * 90) - 25 && pos_u.y < (SQ_U + (y + 1) * 90) + 25)
-        if (pos_u.x > (SQ_L + x * 90) - 25 && pos_u.x < (SQ_L + (x + 1) * 90) + 25)
+        if (pos_u.x > (SQ_L + x * 90) - 25
+            && pos_u.x < (SQ_L + (x + 1) * 90) + 25)
             return 1;
     return 0;
 }

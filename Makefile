@@ -24,10 +24,12 @@ SRC	=		main.c 	\
 			sources/parameters.c \
 			sources/getinfo.c \
 			sources/intro.c \
-			sources/sound.c
+			sources/sound.c	\
+			sources/itoa.c 	\
 
 PLAYER 	= 	sources/player/hud.c				\
-			sources/player/player.c
+			sources/player/player.c				\
+			sources/player/level.c				\
 
 PAUSE	=	sources/pause/pause.c						\
 			sources/pause/pause_animation.c				\

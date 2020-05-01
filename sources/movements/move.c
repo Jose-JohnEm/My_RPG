@@ -70,7 +70,7 @@ int move_map(game_t *game, sfVector2i wanted)
     pos.x += wanted.x;
     pos.y += wanted.y;
     if ((wanted.x != 0 || wanted.y != 0) &&
-        (pos.x > 0 && pos.x < 8 && pos.y > 0 && pos.y < 8)) { 
+        (pos.x > 0 && pos.x < 8 && pos.y > 0 && pos.y < 8)) {
         sfSprite_move(game->map->map, move_in_wanted_zone(wanted));
         game->map->position.x += wanted.x;
         game->map->position.y += wanted.y;

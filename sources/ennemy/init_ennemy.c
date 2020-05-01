@@ -18,7 +18,8 @@ g_ennemy init_skull(vec4 pos)
     sfSprite_setTexture(mob.mob, mob.mob_t, sfFalse);
     sfSprite_setTextureRect(mob.mob, mob.rect);
     mob.pos = pos;
-    sfSprite_setPosition(mob.mob, (sfVector2f){pos.x2 * 90 + SQ_L, pos.y2 * 90 + SQ_U});
+    sfSprite_setPosition(mob.mob,
+        (sfVector2f){pos.x2 * 90 + SQ_L, pos.y2 * 90 + SQ_U});
     return mob;
 }
 

@@ -13,8 +13,18 @@ typedef struct player
     int hp;
     int gold;
     int inv_open;
+    int exp;
+    int level;
+    sfMusic *expsound;
     sfTexture *t_inv;
     sfSprite *inv;
+    sfClock *clock;
+    sfTime time;
+    sfUint32 seconds;
+    sfTexture *t_lvlup;
+    sfSprite *lvlup;
+    sfText *text;
+    sfText *textlvl;
 } player_t;
 
 typedef struct params

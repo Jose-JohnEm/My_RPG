@@ -20,6 +20,7 @@ void draw_window(game_t *game, menu_t *menu)
         animation(game);
         ennemy(game);
         draw_hud(game);
+        make_levelup(game);
         //draw_inventory(game);
     }
     if (game->game > 89) {

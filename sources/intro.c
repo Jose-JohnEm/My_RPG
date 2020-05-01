@@ -10,8 +10,8 @@
 void init_intro(game_t *game)
 {
     game->intro.clock = sfClock_create();
+    game->intro.seconds = sfSeconds(1).microseconds;
     game->skip_intro = 0;
-    game->intro.seconds = sfSeconds(10).microseconds;
     game->intro.font = sfFont_createFromFile("assets/score.ttf");
     game->intro.name = sfText_create();
     sfText_setString(game->intro.name, game->params.name);
@@ -41,8 +41,8 @@ void skip_intro(game_t *game)
 void timer_intro(game_t *game)
 {
     int static x = 0;
-    game->intro.time = sfClock_getElapsedTime(game->intro.clock);
 
+    game->intro.time = sfClock_getElapsedTime(game->intro.clock);
     sfSprite_setTextureRect(game->intro.intro, (sfIntRect){x, 0, 1382, 1212});
     if (game->intro.time.microseconds > game->intro.seconds) {
         sfSprite_setTextureRect(game->intro.intro,
