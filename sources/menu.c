@@ -90,4 +90,5 @@ void draw_menu(game_t *game, menu_t *menu)
     sfRenderWindow_drawSprite(game->window, menu->title, NULL);
     sfRenderWindow_drawSprite(game->window, menu->play, NULL);
     sfRenderWindow_drawSprite(game->window, menu->soundicon, NULL);
+    sfClock_restart(game->intro.clock);
 }

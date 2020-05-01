@@ -10,7 +10,7 @@
 void init_intro(game_t *game)
 {
     game->intro.clock = sfClock_create();
-    game->intro.seconds = sfSeconds(1).microseconds;
+    game->intro.seconds = sfSeconds(8).microseconds;
     game->skip_intro = 0;
     game->intro.font = sfFont_createFromFile("assets/score.ttf");
     game->intro.name = sfText_create();
