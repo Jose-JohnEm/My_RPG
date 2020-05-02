@@ -33,6 +33,10 @@ void draw_window(game_t *game, menu_t *menu)
 
 void create_window(game_t *game, menu_t *menu)
 {
+    pluie_t p;
+    neige_t n;
+
+    init_meteo(&p, &n);
     sound_handling(game);
     while (sfRenderWindow_isOpen(game->window)) {
         window_event(game, menu);
