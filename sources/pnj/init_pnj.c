@@ -9,7 +9,7 @@
 
 void init_questpnj(game_t *game)
 {
-    game->pnj.t_pnjquest = sfTexture_createFromFile("assets/pnj3.jpg", NULL);
+    game->pnj.t_pnjquest = sfTexture_createFromFile("assets/pnj3.png", NULL);
     game->pnj.pnjquest = sfSprite_create();
     sfSprite_setTexture(game->pnj.pnjquest, game->pnj.t_pnjquest, sfTrue);
     game->pnj.quest = (vec4){1, 1, 0, 0};

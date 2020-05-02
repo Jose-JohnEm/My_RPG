@@ -31,6 +31,10 @@ PLAYER 	= 	sources/player/hud.c				\
 			sources/player/player.c				\
 			sources/player/level.c				\
 
+PNJ =		sources/pnj/pnj.c					\
+			sources/pnj/msgbox.c				\
+			sources/pnj/init_pnj.c				\
+
 PAUSE	=	sources/pause/pause.c						\
 			sources/pause/pause_animation.c				\
 			sources/pause/pause_content.c				\
@@ -67,6 +71,7 @@ OBJ	= 	$(SRC:.c=.o)		\
 		$(PLAYER:.c=.o)		\
 		$(COLLISION:.c=.o)	\
 		$(ENNEMY:.c=.o)		\
+		$(PNJ:.c=.o)		\
 
 NAME	=	my_rpg
 

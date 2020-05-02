@@ -20,6 +20,7 @@ void draw_window(game_t *game, menu_t *menu)
         ennemy(game);
         draw_hud(game);
         make_levelup(game);
+        draw_questpnj(game);
         draw_pause(game);
         //draw_inventory(game);
     }

@@ -93,5 +93,7 @@ void init_lvlup(game_t *game);
 void make_levelup(game_t *game);
 char *itoa(int nb);
 void disp_pnj(game_t *g);
+void init_pnjs(game_t *game);
+void draw_questpnj(game_t *game);
 
 #endif

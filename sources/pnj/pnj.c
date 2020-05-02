@@ -10,5 +10,5 @@
 void draw_questpnj(game_t *game)
 {
     sfSprite_setPosition(game->pnj.pnjquest, (sfVector2f){0, 800});
-    sfRenderWindow_drawText(game->window, game->pnj.pnjquest, NULL);
+    sfRenderWindow_drawSprite(game->window, game->pnj.pnjquest, NULL);
 }

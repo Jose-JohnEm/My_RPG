@@ -9,25 +9,25 @@
 
 void init_msgbox(game_t *game)
 {
-    game->pnj.t_pnjquest = sfTexture_createFromFile("assets/pnj3.jpg", NULL);
-    game->pnj.pnjdonjon = sfSprite_create();
-    sfSprite_setTexture(game->pnj.pnjdonjon, game->pnj.t_pnjdonjon, sfTrue);
-    game->pnj.boxmsg = sfText_create();
-    sfText_setString(game->pnj.boxmsg, q_hello);
-    sfText_setFont(game->pnj.boxmsg, game->intro.font);
-    sfText_setCharacterSize(game->pnj.boxmsg, 50);
+    game->pnj.t_boxmsg = sfTexture_createFromFile("assets/msgbox.jpg", NULL);
+    game->pnj.boxmsg = sfSprite_create();
+    sfSprite_setTexture(game->pnj.boxmsg, game->pnj.t_boxmsg, sfTrue);
+    game->pnj.pnjtext = sfText_create();
+    sfText_setString(game->pnj.pnjtext, q_hello);
+    sfText_setFont(game->pnj.pnjtext, game->intro.font);
+    sfText_setCharacterSize(game->pnj.pnjtext, 50);
 }
 
 void select_msg(game_t *game)
 {
     if (game->pnj.msgtype == 1)
-        sfText_setString(game->pnj.boxmsg, q_firstkey);
+        sfText_setString(game->pnj.pnjtext, q_firstkey);
     if (game->pnj.msgtype == 2)
-        sfText_setString(game->pnj.boxmsg, q_lastkey);
+        sfText_setString(game->pnj.pnjtext, q_lastkey);
     if (game->pnj.msgtype == 3)
-        sfText_setString(game->pnj.boxmsg, q_boss);
+        sfText_setString(game->pnj.pnjtext, q_boss);
     if (game->pnj.msgtype == 3)
-        sfText_setString(game->pnj.boxmsg, q_boss2);
+        sfText_setString(game->pnj.pnjtext, q_boss2);
 }
 
 void draw_msg(game_t *game)

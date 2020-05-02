@@ -19,6 +19,7 @@ void rpg(game_t *game, menu_t *menu)
     init_player(game);
     init_hud(game);
     init_lvlup(game);
+    init_pnjs(game);
     game->ennemy = init_ennemy();
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
