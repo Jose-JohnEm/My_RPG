@@ -14,6 +14,8 @@
 #include <SFML/Window.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "game.h"
 
 #include "rpg/structures/pause_struct.h"

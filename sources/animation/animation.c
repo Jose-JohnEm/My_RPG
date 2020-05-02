@@ -15,9 +15,13 @@ g_anim *init_animation(void)
     new->perso = sfSprite_create();
     new->perso_t = sfTexture_createFromFile(path, NULL);
     new->rect = (sfIntRect){0, 0, XRECT, YRECT};
+    new->arrow = sfSprite_create();
+    new->arrow_t = sfTexture_createFromFile("assets/mob/objects/arrow.png", NULL);
+    sfSprite_setTexture(new->arrow, new->arrow_t, sfFalse);
     sfSprite_setTexture(new->perso, new->perso_t, sfFalse);
     sfSprite_setTextureRect(new->perso, new->rect);
     sfSprite_setPosition(new->perso, (sfVector2f){700, 500});
+
     new->way = DOWN;
     return new;
 }
@@ -37,6 +41,25 @@ void display_anim_sets(g_anim **anim, sfRenderWindow **win)
     sfRenderWindow_drawSprite(*win, (*anim)->perso, NULL);
 }
 
+void check_space(game_t *g)
+{
+    sfVector2f pos = sfSprite_getPosition(g->animation->perso);
+
+    if (g->event.key.code == sfKeySpace) {
+        sfSprite_setPosition(g->animation->arrow, pos);
+        if (g->animation->way == LEFT)
+            sfSprite_setRotation(g->animation->arrow, 90);
+        if (g->animation->way == 0)
+            sfSprite_setRotation(g->animation->arrow, 180);
+        if (g->animation->way == RIGHT)
+            sfSprite_setRotation(g->animation->arrow, 270);
+        if (g->animation->way == UP)
+            sfSprite_setRotation(g->animation->arrow, 0);
+        sfRenderWindow_drawSprite(g->window, g->animation->arrow, NULL);
+    }
+    
+}
+
 void animation(game_t *game)
 {
     int is_moving = 0;
@@ -52,6 +75,7 @@ void animation(game_t *game)
         if (is_moving) {
             move_perso(game);
         }
+        check_space(game);
     }
     check_collision(game);
     display_anim_sets(&game->animation, &game->window);
