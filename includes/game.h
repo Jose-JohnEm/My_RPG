@@ -5,8 +5,12 @@
 ** game.h
 */
 
+#include "rpg.h"
+#include "rpg/structures/map_struct.h"
+
 #ifndef GAME_H
 #define GAME_H
+
 
 typedef struct player
 {
@@ -107,10 +111,13 @@ typedef struct pnj
 {
     sfTexture *t_pnjquest;
     sfSprite *pnjquest;
+    vec4 quest;
     sfTexture *t_pnjdonjon;
     sfSprite *pnjdonjon;
+    vec4 donjon;
     sfTexture *t_boxmsg;
     sfSprite *boxmsg;
+    vec4 box;
     sfText *pnjtext;
     int msgtype;
 } pnj_t;

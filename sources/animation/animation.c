@@ -98,5 +98,6 @@ void animation(game_t *game)
         check_space(game);
     }
     check_collision(game);
+    disp_pnj(game);
     display_anim_sets(&game->animation, &game->window);
 }
