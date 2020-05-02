@@ -22,6 +22,7 @@
 #include "rpg/structures/animation_struct.h"
 #include "rpg/structures/map_struct.h"
 #include "rpg/structures/ennemy_struct.h"
+#include "meteo.h"
 #include "rpg/pnj.h"
 typedef struct game
 {
