@@ -22,7 +22,7 @@ g_ennemy *init_ennemy(void);
 a_bad_girl init_bad_girl_attack();
 
 
-/*------ mob_pattern.c ------*/
+/*------ bad_girl_pattern.c ------*/
 void bad_girl_pattern(game_t *g, int i);
 
 /*------ mob_attack.c ------*/

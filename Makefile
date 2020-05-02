@@ -49,7 +49,7 @@ COLLISION	=	sources/collision/collision.c			\
 ENNEMY		=	sources/ennemy/ennemy.c					\
 				sources/ennemy/init_ennemy.c			\
 				sources/ennemy/init_ennemy_attack.c		\
-				sources/ennemy/mob_pattern.c			\
+				sources/ennemy/bad_girl_pattern.c		\
 				sources/ennemy/mob_attack.c				\
 				sources/ennemy/animate_mob.c			\
 

@@ -12,6 +12,8 @@ g_ennemy bad_girl_attack(g_ennemy mob, sfRenderWindow **win)
     static int ok = 0;
     sfVector2f cur_pos = sfSprite_getPosition(mob.mob);
     
+    cur_pos.x += 50;
+    cur_pos.y += 50;
     if (ok == 0) {
         sfSprite_setPosition(mob.attack.up, cur_pos);
         sfSprite_setPosition(mob.attack.down, cur_pos);
@@ -29,7 +31,7 @@ g_ennemy bad_girl_attack(g_ennemy mob, sfRenderWindow **win)
         sfRenderWindow_drawSprite(*win, mob.attack.left, NULL);
         sfRenderWindow_drawSprite(*win, mob.attack.right, NULL);
     }
-    if (sfTime_asSeconds(sfClock_getElapsedTime(mob.clock)) > 2.9)
+    if (sfTime_asSeconds(sfClock_getElapsedTime(mob.clock)) > 2.95)
         ok = 0;
     return mob;
 }
