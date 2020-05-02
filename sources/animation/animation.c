@@ -78,7 +78,6 @@ void check_space(game_t *g)
     }
     if (time > 1) {
         ok = 0;
-        g->event.key.code = 0;
     }
 }
 
@@ -99,6 +98,7 @@ void animation(game_t *game)
         }
         check_space(game);
     }
+    check_hitting(game);
     check_collision(game);
     display_anim_sets(&game->animation, &game->window);
 }

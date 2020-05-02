@@ -37,7 +37,7 @@ void does_hit(game_t *game)
 void ennemy_display(g_ennemy *mob, sfRenderWindow **win, sfVector2i pos)
 {
     for (int i = 0; i < MONSTERS; i++)
-        if (mob[i].pos.x1 + 1 == pos.x && mob[i].pos.y1 + 1 == pos.y)
+        if (mob[i].pos.x1 + 1 == pos.x && mob[i].pos.y1 + 1 == pos.y && mob[i].pv > 0)
             sfRenderWindow_drawSprite(*win, mob[i].mob, NULL);
 }
 

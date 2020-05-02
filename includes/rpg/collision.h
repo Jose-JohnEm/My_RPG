@@ -14,6 +14,7 @@
 void check_collision(game_t *game);
 int should_collide(int x, int y, sfVector2f pos_u);
 void apply_collide(sfSprite **user, char way);
+void check_hitting(game_t *game);
 
 
 /* ---- collide_settings.c ---- */
