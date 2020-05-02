@@ -12,7 +12,7 @@ void init_meteo(pluie_t *p, neige_t *n)
     p->offset.x = 0;
     p->offset.y = 0;
     n->offset2.x = 0;
-    n->offset2.y = -1080;
+    n->offset2.y = -2160;
 
     p->back1 = sfTexture_createFromFile("assets/meteo/pluie.png", NULL);
     n->back2 = sfTexture_createFromFile("assets/meteo/neige.png", NULL);
