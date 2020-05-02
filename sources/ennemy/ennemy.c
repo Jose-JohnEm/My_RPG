@@ -9,7 +9,6 @@
 
 int is_hitting(sfVector2f u_pos, sfVector2f e_pos)
 {
-    printf("Ennemy : X = %f   Y = %f\nUser : X = %f   Y = %f\n", e_pos.x, e_pos.y, u_pos.x, u_pos.y);
     if (e_pos.y + 100 > u_pos.y && e_pos.y - 100 < u_pos.y)
         if (e_pos.x + 100 > u_pos.x && e_pos.x - 100 < u_pos.x)
             return 1;
@@ -26,8 +25,12 @@ void does_hit(game_t *game)
     for (int i = 0; i < MONSTERS; i++) {
         e_pos = sfSprite_getPosition(game->ennemy[i].mob);
         mob = game->ennemy[i].pos;
-        if (is_hitting(u_pos, e_pos) && mob.x1 + 1 == map.x && mob.y1 + 1 == map.y)
+        if (game->ennemy[i].type == 3 && mob.x1 + 1 == map.x && mob.y1 + 1 == map.y) {
+            bad_girl_pattern(game, i);
+        }
+        if (is_hitting(u_pos, e_pos) && mob.x1 + 1 == map.x && mob.y1 + 1 == map.y) {
             game->player.hp -= 1;
+        }
     }
 }
 

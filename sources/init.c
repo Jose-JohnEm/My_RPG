@@ -9,6 +9,7 @@
 
 void rpg(game_t *game, menu_t *menu)
 {
+    srand(1000);
     game->clock = sfClock_create();
     game->seconds = sfSeconds(0.1).microseconds;
     init_menu(game, menu);
