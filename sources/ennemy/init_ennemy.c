@@ -11,7 +11,7 @@ g_ennemy init_skull_bow(vec4 pos)
 {
     g_ennemy mob;
 
-    mob.pv = 20;
+    mob.pv = 10;
     mob.mob = sfSprite_create();
     mob.mob_t = sfTexture_createFromFile("assets/mob/skull_bow.png", NULL);
     mob.rect = (sfIntRect){0, 0, 100, 100};
@@ -72,6 +72,7 @@ g_ennemy *init_ennemy(void)
 {
     g_ennemy *mob = malloc(sizeof(g_ennemy) * MONSTERS);
 
-    mob[0] = init_from_type(SKULL_BOW, (vec4){0, 0, 6, 5});
+    mob[0] = init_from_type(SKULL_BOW, (vec4){1, 1, 6, 5});
+    mob[1] = init_from_type(BAD_GIRL, (vec4){0, 0, 5, 5});
     return mob;
 }
