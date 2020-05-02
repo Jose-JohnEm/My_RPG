@@ -71,9 +71,6 @@ g_ennemy *init_ennemy(void)
 {
     g_ennemy *mob = malloc(sizeof(g_ennemy) * MONSTERS);
 
-    mob[0] = init_from_type(SKULL_BOW, (vec4){0, 0, 1, 1});
-    mob[1] = init_from_type(SKULL_AXE, (vec4){1, 0, 5, 5});
-    mob[2] = init_from_type(SKULL_BOW, (vec4){1, 1, 3, 8});
-    mob[3] = init_from_type(BAD_GIRL, (vec4){0, 1, 9, 8});
+    mob[0] = init_from_type(SKULL_BOW, (vec4){0, 0, 6, 5});
     return mob;
 }

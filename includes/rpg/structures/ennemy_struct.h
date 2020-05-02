@@ -14,7 +14,7 @@
 #define SKULL_AXE 2
 #define BAD_GIRL 3
 
-#define MONSTERS 4
+#define MONSTERS 1
 
 typedef struct a_bad_girl
 {

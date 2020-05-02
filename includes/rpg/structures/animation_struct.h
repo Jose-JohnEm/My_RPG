@@ -25,6 +25,8 @@ typedef struct g_anim
     sfIntRect rect;
     char way;
     sfClock *clock;
+    sfSprite *arrow;
+    sfTexture *arrow_t;
 } g_anim;
 
 #endif

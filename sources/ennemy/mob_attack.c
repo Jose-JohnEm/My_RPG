@@ -12,8 +12,8 @@ g_ennemy bad_girl_attack(g_ennemy mob, sfRenderWindow **win)
     static int ok = 0;
     sfVector2f cur_pos = sfSprite_getPosition(mob.mob);
     
-    cur_pos.x += 50;
-    cur_pos.y += 50;
+    cur_pos.x += 100;
+    cur_pos.y += 100;
     if (ok == 0) {
         sfSprite_setPosition(mob.attack.up, cur_pos);
         sfSprite_setPosition(mob.attack.down, cur_pos);
