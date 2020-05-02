@@ -31,6 +31,16 @@ int should_collide(int y, int x, sfVector2f pos_u)
     return 0;
 }
 
+void check_hitting(game_t *game)
+{
+    vec4 cur;
+    sfVector2f a_pos = sfSprite_getPosition(game->animation->arrow);
+
+    for (int i = 0; i < MONSTERS; i++) {
+        
+    }
+}
+
 void check_collision(game_t *game)
 {
     char way = game->animation->way;
