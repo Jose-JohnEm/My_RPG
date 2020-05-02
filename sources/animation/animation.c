@@ -20,8 +20,9 @@ g_anim *init_animation(void)
     sfSprite_setTexture(new->arrow, new->arrow_t, sfFalse);
     sfSprite_setTexture(new->perso, new->perso_t, sfFalse);
     sfSprite_setTextureRect(new->perso, new->rect);
+    sfSprite_setTextureRect(new->arrow, (sfIntRect){110, 60, 40, 130});
     sfSprite_setPosition(new->perso, (sfVector2f){700, 500});
-
+    new->cl_a = sfClock_create();
     new->way = DOWN;
     return new;
 }
@@ -44,20 +45,39 @@ void display_anim_sets(g_anim **anim, sfRenderWindow **win)
 void check_space(game_t *g)
 {
     sfVector2f pos = sfSprite_getPosition(g->animation->perso);
+    static int ok = 0;
+    float time = sfTime_asSeconds(sfClock_getElapsedTime(g->animation->cl_a));
+    char way;
 
-    if (g->event.key.code == sfKeySpace) {
+    pos.x += 50;
+    pos.y += 50;
+    if (ok == 0 && g->event.key.code == sfKeySpace) {
         sfSprite_setPosition(g->animation->arrow, pos);
-        if (g->animation->way == LEFT)
+        ok = 1;
+        sfClock_restart(g->animation->cl_a);
+        way = g->animation->way;
+    }
+    if (ok == 1 && time < 1) {
+        if (way == LEFT) {
             sfSprite_setRotation(g->animation->arrow, 90);
-        if (g->animation->way == 0)
+            sfSprite_move(g->animation->arrow, (sfVector2f){30, 0});
+        }
+        if (way == 0) {
             sfSprite_setRotation(g->animation->arrow, 180);
-        if (g->animation->way == RIGHT)
+            sfSprite_move(g->animation->arrow, (sfVector2f){0, 30});
+        }
+        if (way == RIGHT) {
             sfSprite_setRotation(g->animation->arrow, 270);
-        if (g->animation->way == UP)
+            sfSprite_move(g->animation->arrow, (sfVector2f){-30, 0});
+        }
+        if (way == UP) {
             sfSprite_setRotation(g->animation->arrow, 0);
+            sfSprite_move(g->animation->arrow, (sfVector2f){0, -30});
+        }
         sfRenderWindow_drawSprite(g->window, g->animation->arrow, NULL);
     }
-    
+    if (time > 1)
+        ok = 0; 
 }
 
 void animation(game_t *game)
