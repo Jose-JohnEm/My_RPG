@@ -47,7 +47,7 @@ void check_space(game_t *g)
     sfVector2f pos = sfSprite_getPosition(g->animation->perso);
     static int ok = 0;
     float time = sfTime_asSeconds(sfClock_getElapsedTime(g->animation->cl_a));
-    char way;
+    static char way;
 
     pos.x += 50;
     pos.y += 50;
