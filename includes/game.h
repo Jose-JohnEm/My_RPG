@@ -103,4 +103,16 @@ typedef struct sound
     sfMusic *boss;
 } sound_t;
 
+typedef struct pnj
+{
+    sfTexture *t_pnjquest;
+    sfSprite *pnjquest;
+    sfTexture *t_pnjdonjon;
+    sfSprite *pnjdonjon;
+    sfTexture *t_boxmsg;
+    sfSprite *boxmsg;
+    sfText *pnjtext;
+    int msgtype;
+} pnj_t;
+
 #endif

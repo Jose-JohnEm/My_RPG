@@ -12,6 +12,6 @@ void init_player(game_t *game)
     game->player.hp = 100;
     game->player.gold = 10;
     game->player.inv_open = 0;
-    game->player.exp = 100;
-    game->player.level = 10;
+    game->player.exp = 0;
+    game->player.level = 1;
 }

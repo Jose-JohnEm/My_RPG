@@ -22,6 +22,7 @@
 #include "rpg/structures/animation_struct.h"
 #include "rpg/structures/map_struct.h"
 #include "rpg/structures/ennemy_struct.h"
+#include "rpg/pnj.h"
 typedef struct game
 {
     sfRenderWindow *window;
@@ -42,6 +43,7 @@ typedef struct game
     g_anim *animation;
     g_map *map;
     g_ennemy *ennemy;
+    pnj_t pnj;
     intro_t intro;
     params_t params;
     sound_t sound;
