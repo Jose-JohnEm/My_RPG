@@ -76,8 +76,10 @@ void check_space(game_t *g)
         }
         sfRenderWindow_drawSprite(g->window, g->animation->arrow, NULL);
     }
-    if (time > 1)
-        ok = 0; 
+    if (time > 1) {
+        ok = 0;
+        g->event.key.code = 0;
+    }
 }
 
 void animation(game_t *game)
@@ -98,6 +100,5 @@ void animation(game_t *game)
         check_space(game);
     }
     check_collision(game);
-    disp_pnj(game);
     display_anim_sets(&game->animation, &game->window);
 }
