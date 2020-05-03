@@ -38,6 +38,16 @@ void grow_up_kill(game_t *g, char type, int *pv, int i)
         *pv = -100;
         sfSprite_setPosition(g->ennemy[i].mob, (sfVector2f){2000, 2000});
     }
+    if (*pv <= 0 && *pv > -50 && type == SKULL_AXE) {
+        g->player.target.sk_axe++;
+        *pv = -100;
+        sfSprite_setPosition(g->ennemy[i].mob, (sfVector2f){2000, 2000});
+    }
+    if (*pv <= 0 && *pv > -50 && type == BAD_GIRL) {
+        g->player.target.bad_girl++;
+        *pv = -100;
+        sfSprite_setPosition(g->ennemy[i].mob, (sfVector2f){2000, 2000});
+    }
 }
 
 void check_hitting(game_t *g)
