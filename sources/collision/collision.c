@@ -31,6 +31,15 @@ int should_collide(int y, int x, sfVector2f pos_u)
     return 0;
 }
 
+void grow_up_kill(game_t *g, char type, int *pv, int i)
+{
+    if (*pv <= 0 && *pv > -50 && type == SKULL_BOW) {
+        g->player.target.sk_bow++;
+        *pv = -100;
+        sfSprite_setPosition(g->ennemy[i].mob, (sfVector2f){2000, 2000});
+    }
+}
+
 void check_hitting(game_t *g)
 {
     vec4 cur;
@@ -45,6 +54,7 @@ void check_hitting(game_t *g)
             if (a_pos.x + 50 > e_pos.x && a_pos.x + 50 < e_pos.x + 200) {
                 g->ennemy[i].pv -= 5;
                 sfSprite_setPosition(g->animation->arrow, (sfVector2f){3000, 3000});
+                grow_up_kill(g, g->ennemy[i].type, &g->ennemy[i].pv, i);
             }
     }
 }

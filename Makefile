@@ -67,6 +67,7 @@ ITEM		=	sources/items/init_inventory.c			\
 				sources/items/init_item.c				\
 				sources/items/inventory.c				\
 				sources/items/item.c					\
+				sources/items/keys_handle.c				\
 
 CC	=	@gcc
 
