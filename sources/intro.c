@@ -35,6 +35,7 @@ void skip_intro(game_t *game)
             game->game = 1;
             sfMusic_stop(game->intro.music);
             sfMusic_play(game->sound.music);
+            sfMusic_setLoop(game->sound.music, 1);
         }
     }
 }
@@ -55,6 +56,7 @@ void timer_intro(game_t *game)
             game->skip_intro = 1;
             sfMusic_stop(game->intro.music);
             sfMusic_play(game->sound.music);
+            sfMusic_setLoop(game->sound.music, 1);
         }
         else
             x = x + 1382;
