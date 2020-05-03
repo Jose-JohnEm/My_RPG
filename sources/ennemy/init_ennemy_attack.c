@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-a_bad_girl init_bad_girl_attack()
+a_bad_girl init_bad_girl_attack(void)
 {
     a_bad_girl a;
 
@@ -28,4 +28,17 @@ a_bad_girl init_bad_girl_attack()
     sfSprite_setScale(a.left, (sfVector2f){0.4, 0.4});
     sfSprite_setScale(a.down, (sfVector2f){0.4, 0.4});
     return a;
+}
+
+a_sk_bow init_skull_bow_attack(void)
+{
+    a_sk_bow new;
+
+    new.arr = sfSprite_create();
+    new.arr_t = sfTexture_createFromFile("assets/mob/objects/arrow.png", NULL);
+    sfSprite_setTexture(new.arr, new.arr_t, sfFalse);
+    sfSprite_setTextureRect(new.arr, (sfIntRect){110, 60, 40, 130});
+    new.clock = sfClock_create();
+    new.launched = 0;
+    return new;
 }

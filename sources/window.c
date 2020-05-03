@@ -17,7 +17,8 @@ void draw_window(game_t *game, menu_t *menu)
     if (game->game == 1 || game->game == 2) {
         draw_map(game);
         animation(game);
-        ennemy(game);
+        if (game->game == 1)
+            ennemy(game);
         draw_hud(game);
         make_levelup(game);
         draw_questpnj(game);
@@ -40,7 +41,7 @@ void create_window(game_t *game, menu_t *menu)
     sound_handling(game);
     while (sfRenderWindow_isOpen(game->window)) {
         window_event(game, menu);
-        if (game->player.hp == 0)
+        if (game->player.hp <= 0)
             game->game = -2;
         draw_window(game, menu);
     }

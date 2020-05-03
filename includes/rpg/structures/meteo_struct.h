@@ -1,11 +1,14 @@
 /*
 ** EPITECH PROJECT, 2019
-** all
+** MUL_my_rpg_2019
 ** File description:
-** paqs
+** meteo_struct.h
 */
 
 #include "rpg.h"
+
+#ifndef METEO_STRUCT_H
+#define METEO_STRUCT_H
 
 typedef struct pluie_s pluie_t;
 struct pluie_s {
@@ -21,7 +24,4 @@ struct neige_s {
     sfSprite *spriteback2;
 };
 
-void init_meteo(pluie_t *p, neige_t *n);
-void pluie(game_t *win, pluie_t *p);
-void neige(game_t *win, neige_t *n);
-void destroy_meteo(game_t *win, pluie_t *p, neige_t *n);
+#endif

@@ -14,7 +14,7 @@
 #define SKULL_AXE 2
 #define BAD_GIRL 3
 
-#define MONSTERS 2
+#define MONSTERS 3
 
 typedef struct a_bad_girl
 {
@@ -24,6 +24,14 @@ typedef struct a_bad_girl
     sfSprite *right;
     sfTexture *texture;
 } a_bad_girl;
+
+typedef struct a_sk_bow
+{
+    sfSprite *arr;
+    sfTexture *arr_t;
+    sfClock *clock;
+    int launched;
+} a_sk_bow;
 
 typedef struct g_ennemy
 {
@@ -35,6 +43,7 @@ typedef struct g_ennemy
     sfIntRect rect;
     sfClock *clock;
     a_bad_girl attack;
+    a_sk_bow sk_attack;
 } g_ennemy;
 
 #endif

@@ -22,7 +22,7 @@
 #include "rpg/structures/animation_struct.h"
 #include "rpg/structures/map_struct.h"
 #include "rpg/structures/ennemy_struct.h"
-#include "meteo.h"
+#include "rpg/structures/meteo_struct.h"
 #include "rpg/pnj.h"
 typedef struct game
 {
@@ -50,6 +50,7 @@ typedef struct game
     sound_t sound;
 } game_t;
 
+#include "rpg/meteo.h"
 #include "rpg/map_collision.h"
 #include "rpg/animation.h"
 #include "rpg/pause.h"
