@@ -9,6 +9,10 @@
 
 void my_destroy(game_t *game)
 {
+    sfMusic_destroy(game->sound.boss);
+    sfMusic_destroy(game->sound.end);
+    sfMusic_destroy(game->sound.gameover);
+    sfMusic_destroy(game->player.expsound);
     sfMusic_destroy(game->intro.music);
     sfMusic_destroy(game->music);
     sfRenderWindow_close(game->window);
