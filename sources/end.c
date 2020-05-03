@@ -23,10 +23,16 @@ void init_end(game_t *game, menu_t *menu)
 
 void draw_end(game_t *game, menu_t *menu)
 {
-    if (game->game == -1)
+    if (game->game == -1) {
+        sfMusic_stop(game->sound.music);
+        sfMusic_play(game->sound.end);
         init_end(game, menu);
-    if (game->game == -2)
+    }
+    if (game->game == -2) {
+        sfMusic_stop(game->sound.music);
+        sfMusic_play(game->sound.gameover);
         init_game_over(game, menu);
+    }
     sfSprite_setPosition(menu->logo, (sfVector2f){700, 100});
     sfSprite_setPosition(menu->soundicon, (sfVector2f){25, 900});
     sfText_setPosition(menu->hud.score, (sfVector2f){580, 600});

@@ -33,7 +33,7 @@ void draw_window(game_t *game, menu_t *menu)
 
 void create_window(game_t *game, menu_t *menu)
 {
-    sound_handling(game);
+    sfMusic_play(game->music);
     while (sfRenderWindow_isOpen(game->window)) {
         window_event(game, menu);
         if (game->player.hp <= 0)

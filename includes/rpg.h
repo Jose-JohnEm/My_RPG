@@ -93,7 +93,6 @@ char *get_info(void);
 void draw_intro(game_t *game);
 void init_intro(game_t *game);
 void skip_intro(game_t *game);
-void sound_handling(game_t *game);
 void init_player(game_t * game);
 void init_lvlup(game_t *game);
 void make_levelup(game_t *game);

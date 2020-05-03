@@ -105,7 +105,7 @@ typedef struct sound
 {
     sfMusic *end;
     sfMusic *gameover;
-    sfMusic *boss;
+    sfMusic *music;
 } sound_t;
 
 typedef struct pnj
