@@ -29,7 +29,10 @@ void does_hit(game_t *game)
             bad_girl_pattern(game, i);
         }
         if (game->ennemy[i].type == SKULL_AXE && mob.x1 + 1 == map.x && mob.y1 + 1 == map.y && game->ennemy[i].pv > 0) {
-            skull_axe_attack(&game->ennemy[i], game->animation->perso, &game->window);
+            skull_axe_attack(game, i);
+        }
+        if (game->ennemy[i].type == SKULL_BOW && mob.x1 + 1 == map.x && mob.y1 + 1 == map.y && game->ennemy[i].pv > 0) {
+            skull_bow_attack(game, i);
         }
         if (is_hitting(u_pos, e_pos) && mob.x1 + 1 == map.x && mob.y1 + 1 == map.y) {
             game->player.hp -= 1;

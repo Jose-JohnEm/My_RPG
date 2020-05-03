@@ -11,7 +11,7 @@ g_ennemy init_skull_bow(vec4 pos)
 {
     g_ennemy mob;
 
-    mob.pv = 10;
+    mob.pv = 15;
     mob.mob = sfSprite_create();
     mob.mob_t = sfTexture_createFromFile("assets/mob/skull_bow.png", NULL);
     mob.rect = (sfIntRect){0, 0, 100, 100};
@@ -20,6 +20,8 @@ g_ennemy init_skull_bow(vec4 pos)
     mob.pos = pos;
     sfSprite_setPosition(mob.mob,
         (sfVector2f){pos.x2 * 90 + SQ_L, pos.y2 * 90 + SQ_U});
+    mob.type = SKULL_BOW;
+    mob.sk_attack = init_skull_bow_attack();
     return mob;
 }
 
@@ -36,6 +38,7 @@ g_ennemy init_skull_axe(vec4 pos)
     mob.pos = pos;
     sfSprite_setPosition(mob.mob, (sfVector2f){pos.x2 * 90 + SQ_L, pos.y2 * 90 + SQ_U});
     sfSprite_setScale(mob.mob, (sfVector2f){3, 3});
+    mob.type = SKULL_AXE;
     return mob;
 }
 
@@ -72,7 +75,8 @@ g_ennemy *init_ennemy(void)
 {
     g_ennemy *mob = malloc(sizeof(g_ennemy) * MONSTERS);
 
-    mob[0] = init_from_type(SKULL_BOW, (vec4){0, 0, 9, 9});
+    mob[0] = init_from_type(SKULL_AXE, (vec4){1, 0, 9, 9});
     mob[1] = init_from_type(BAD_GIRL, (vec4){1, 1, 5, 5});
+    mob[2] = init_from_type(SKULL_BOW, (vec4){0, 0, 9, 1});
     return mob;
 }

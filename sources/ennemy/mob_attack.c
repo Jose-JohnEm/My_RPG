@@ -36,22 +36,22 @@ g_ennemy bad_girl_attack(g_ennemy mob, sfRenderWindow **win)
     return mob;
 }
 
-void skull_axe_attack(g_ennemy *mob, sfSprite *user, sfRenderWindow **win)
+void skull_axe_attack(game_t *game, int i)
 {
     sfVector2f new = {0, 0};
-    sfVector2f u_pos = sfSprite_getPosition(user);
-    sfVector2f e_pos = sfSprite_getPosition(mob->mob);
+    sfVector2f u_pos = sfSprite_getPosition(game->animation->perso);
+    sfVector2f e_pos = sfSprite_getPosition(game->ennemy[i].mob);
 
     if (u_pos.y != e_pos.y) {
         if (u_pos.y > e_pos.y)
-            new.y += 5;
+            new.y += 4;
         else
-            new.y -= 5;
+            new.y -= 4;
     } if (u_pos.x != e_pos.x) {
         if (u_pos.x > e_pos.x)
-            new.x += 5;
+            new.x += 4;
         else
-            new.x -=5;
+            new.x -= 4;
     }
-    sfSprite_move(mob->mob, new);
+    sfSprite_move(game->ennemy[i].mob, new);
 }
