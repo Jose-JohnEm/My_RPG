@@ -32,9 +32,10 @@ void init_text(menu_t *menu)
 {
     menu->hud.f_lvl = sfFont_createFromFile("assets/score.ttf");
     menu->hud.score = sfText_create();
-    sfText_setString(menu->hud.score, "SCORE : 5403");
+    sfText_setString(menu->hud.score,
+        "LEVEL\n\nWell played ! Hope you enjoyed");
     sfText_setFont(menu->hud.score, menu->hud.f_lvl);
-    sfText_setCharacterSize(menu->hud.score, 150);
+    sfText_setCharacterSize(menu->hud.score, 50);
 }
 
 int init_rpg(void)
