@@ -15,7 +15,8 @@ void init_msgbox(game_t *game)
     game->pnj.pnjtext = sfText_create();
     sfText_setString(game->pnj.pnjtext, q_hello);
     sfText_setFont(game->pnj.pnjtext, game->intro.font);
-    sfText_setCharacterSize(game->pnj.pnjtext, 50);
+    sfText_setCharacterSize(game->pnj.pnjtext, 30);
+    sfText_setColor(game->pnj.pnjtext, sfBlack);
 }
 
 void select_msg(game_t *game)
@@ -32,8 +33,8 @@ void select_msg(game_t *game)
 
 void draw_msg(game_t *game)
 {
-    sfText_setPosition(game->pnj.pnjtext, (sfVector2f){0, 800});
-    sfSprite_setPosition(game->pnj.boxmsg, (sfVector2f){0, 800});
+    sfText_setPosition(game->pnj.pnjtext, (sfVector2f){500, 850});
+    sfSprite_setPosition(game->pnj.boxmsg, (sfVector2f){400, 800});
     sfRenderWindow_drawSprite(game->window, game->pnj.boxmsg, NULL);
     sfRenderWindow_drawText(game->window, game->pnj.pnjtext, NULL);
 }

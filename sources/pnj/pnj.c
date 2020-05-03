@@ -16,7 +16,7 @@ void enable_pnjmsg(game_t *game)
 
     if (pnjquest.x1 == map.x && pnjquest.y1 == map.y) {
         if (player.x + 50 >= questpos.x - 50 && player.x <= questpos.x + 100
-            && player.y + 50 >= questpos.y -50 && player.y + 50 <= questpos.y + 150)
+            && player.y + 50 >= questpos.y - 50 && player.y + 50 <= questpos.y + 150)
             draw_msg(game);
     }
 }
