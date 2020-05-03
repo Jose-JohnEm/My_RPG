@@ -9,7 +9,7 @@
 
 void init_msgbox(game_t *game)
 {
-    game->pnj.t_boxmsg = sfTexture_createFromFile("assets/msgbox.jpg", NULL);
+    game->pnj.t_boxmsg = sfTexture_createFromFile("assets/boxmsg.png", NULL);
     game->pnj.boxmsg = sfSprite_create();
     sfSprite_setTexture(game->pnj.boxmsg, game->pnj.t_boxmsg, sfTrue);
     game->pnj.pnjtext = sfText_create();

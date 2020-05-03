@@ -7,8 +7,23 @@
 
 #include "rpg.h"
 
-void draw_questpnj(game_t *g)
+void enable_pnjmsg(game_t *game)
 {
-    if (g->pnj.quest.x1 == g->map->position.x && g->pnj.quest.y1 == g->map->position.y)
-        sfRenderWindow_drawSprite(g->window, g->pnj.pnjquest, NULL);
+    sfVector2f questpos = sfSprite_getPosition(game->pnj.pnjquest);
+    sfVector2f player = sfSprite_getPosition(game->animation->perso);
+    sfVector2i map = game->map->position;
+    vec4 pnjquest = {1, 1, 3, 5};;
+
+    if (pnjquest.x1 == map.x && pnjquest.y1 == map.y) {
+        if (questpos.x - 100 >= player.x && questpos.x  + 100 <= player.x)
+            printf("OUI");
+    }
+}
+
+void draw_questpnj(game_t *game)
+{
+    enable_pnjmsg(game);
+    if (game->pnj.quest.x1 == game->map->position.x 
+        && game->pnj.quest.y1 == game->map->position.y)
+        sfRenderWindow_drawSprite(game->window, game->pnj.pnjquest, NULL);
 }
