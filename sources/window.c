@@ -21,6 +21,7 @@ void draw_window(game_t *game, menu_t *menu)
         draw_hud(game);
         make_levelup(game);
         draw_questpnj(game);
+        gen_time(game);
         draw_pause(game);
         //draw_inventory(game);
     }
@@ -33,10 +34,6 @@ void draw_window(game_t *game, menu_t *menu)
 
 void create_window(game_t *game, menu_t *menu)
 {
-    pluie_t p;
-    neige_t n;
-
-    init_meteo(&p, &n);
     sound_handling(game);
     while (sfRenderWindow_isOpen(game->window)) {
         window_event(game, menu);

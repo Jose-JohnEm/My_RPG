@@ -43,6 +43,8 @@ PAUSE	=	sources/pause/pause.c						\
 
 ANIMATION	=	sources/animation/animation.c			\
 				sources/animation/select_rect.c			\
+				sources/meteo/pluie.c					\
+				sources/meteo/neige.c 					\
 
 MAP		=	sources/map/map.c							\
 			sources/map/init_map.c						\

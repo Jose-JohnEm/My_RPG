@@ -21,7 +21,3 @@ struct neige_s {
     sfSprite *spriteback2;
 };
 
-void init_meteo(pluie_t *p, neige_t *n);
-void pluie(game_t *win, pluie_t *p);
-void neige(game_t *win, neige_t *n);
-void destroy_meteo(game_t *win, pluie_t *p, neige_t *n);

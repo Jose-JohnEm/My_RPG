@@ -24,11 +24,26 @@ void init_meteo(pluie_t *p, neige_t *n)
 
 void pluie(game_t *win, pluie_t *p)
 {
-    p->offset.x = p->offset.x - 1;
+    p->offset.x = p->offset.x - 10;
         if (p->offset.x <= -2048) {
             p->offset.x = 0;
             sfSprite_setPosition(p->spriteback1, p->offset);
     }
     sfSprite_setPosition(p->spriteback1, p->offset);
     sfRenderWindow_drawSprite(win->window, p->spriteback1, NULL);
+}
+
+void  gen_time(game_t *win)
+{
+    static int random = 0;
+    float time = sfTime_asSeconds(sfClock_getElapsedTime(win->clock));
+
+    if (time > 60) {
+        random = rand() % 3;
+        sfClock_restart(win->clock);
+    }
+    if (random == 1)
+        pluie(win, &win->pluie);
+    if (random == 2)
+        neige(win, &win->neige);
 }

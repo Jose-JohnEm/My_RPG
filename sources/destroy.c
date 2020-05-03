@@ -9,6 +9,9 @@
 
 void my_destroy(game_t *game)
 {
+
+
+    destroy_meteo(game, &game->pluie, &game->neige);
     sfMusic_destroy(game->music);
     sfRenderWindow_close(game->window);
     sfRenderWindow_destroy(game->window);

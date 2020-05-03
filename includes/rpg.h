@@ -48,6 +48,8 @@ typedef struct game
     intro_t intro;
     params_t params;
     sound_t sound;
+    pluie_t pluie;
+    neige_t neige;
 } game_t;
 
 #include "rpg/map_collision.h"
@@ -96,5 +98,10 @@ char *itoa(int nb);
 void disp_pnj(game_t *g);
 void init_pnjs(game_t *game);
 void draw_questpnj(game_t *game);
+void init_meteo(pluie_t *p, neige_t *n);
+void pluie(game_t *win, pluie_t *p);
+void neige(game_t *win, neige_t *n);
+void destroy_meteo(game_t *win, pluie_t *p, neige_t *n);
+void  gen_time(game_t *win);
 
 #endif
