@@ -37,10 +37,12 @@ int is_arrow_key(sfKeyCode key)
     return 0;
 }
 
-void display_anim_sets(g_anim **anim, sfRenderWindow **win)
+void display_anim_sets(g_anim **anim, sfRenderWindow **win, int first)
 {
-    sfSprite_setTextureRect((*anim)->perso, (*anim)->rect);
-    sfRenderWindow_drawSprite(*win, (*anim)->perso, NULL);
+    if (first == 1) {
+        sfSprite_setTextureRect((*anim)->perso, (*anim)->rect);
+        sfRenderWindow_drawSprite(*win, (*anim)->perso, NULL);
+    }
 }
 
 void check_space(game_t *g)
@@ -68,12 +70,14 @@ void check_space(game_t *g)
 void animation(game_t *game)
 {
     int is_moving = 0;
+    static int first = 0;
 
     if (game->game == 1) {
         if (is_arrow_key(game->event.key.code)) {
             game->animation->way = game->event.key.code - 70;
             game->event.key.code = 0;
             is_moving = 1;
+            first = 1;
         }
         select_rect_x(&game->animation, is_moving);
         select_rect_y(&game->animation, is_moving);
@@ -85,5 +89,5 @@ void animation(game_t *game)
     check_hitting(game);
     check_collision(game);
     keys_handle(game);
-    display_anim_sets(&game->animation, &game->window);
+    display_anim_sets(&game->animation, &game->window, first);
 }

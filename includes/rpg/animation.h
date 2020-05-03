@@ -15,7 +15,7 @@
 void animation(game_t *game);
 g_anim *init_animation(void);
 int is_arrow_key(sfKeyCode key);
-void display_anim_sets(g_anim **anim, sfRenderWindow **win);
+void display_anim_sets(g_anim **anim, sfRenderWindow **win, int first);
 
 
 /*----- select_rect.c -----*/
