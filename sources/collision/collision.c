@@ -57,8 +57,11 @@ void check_hitting(game_t *g)
                 sfSprite_setPosition(g->animation->arrow,
                     (sfVector2f){3000, 3000});
                 grow_up_kill(g, g->ennemy[i].type, &g->ennemy[i].pv, i);
+                g->player.hp += 25;
             }
     }
+    if (g->player.hp > 100)
+        g->player.hp = 100;
 }
 
 void check_collision(game_t *game)

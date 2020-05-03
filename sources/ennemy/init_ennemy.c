@@ -76,12 +76,16 @@ g_ennemy init_from_type(char type, vec4 pos)
 g_ennemy *init_ennemy(void)
 {
     g_ennemy *mob = malloc(sizeof(g_ennemy) * MONSTERS);
+    int i = 0;
 
-    mob[0] = init_from_type(SKULL_AXE, (vec4){1, 0, 9, 9});
-    mob[1] = init_from_type(BAD_GIRL, (vec4){1, 1, 5, 5});
-    for (int i = 2; i < MONSTERS; i++) {
-        mob[i] = init_from_type(SKULL_BOW, (vec4){0, rand() % 6 + 1,
-                                                rand() % 10, rand() % 10});
-    }
+    for (; i < 20; i++)
+        mob[i] = init_from_type(SKULL_BOW, (vec4){rand() % 7,
+                        rand() % 7, rand() % 10 + 1, rand() % 10 + 1});
+    for (; i < 40; i++)
+        mob[i] = init_from_type(SKULL_AXE, (vec4){rand() % 7,
+                        rand() % 7, rand() % 10 + 1, rand() % 10 + 1});
+    for (; i < 55; i++)
+        mob[i] = init_from_type(BAD_GIRL, (vec4){rand() % 7,
+                        rand() % 7, rand() % 10 + 1, rand() % 10 + 1});
     return mob;
 }
