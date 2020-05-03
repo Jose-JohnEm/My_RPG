@@ -53,6 +53,7 @@ int init_rpg(void)
     if (set_parameters(&game) == -1)
         return -1;
     init_text(&menu);
+    init_sound(&game);
     init_intro(&game);
     rpg(&game, &menu);
     create_window(&game, &menu);

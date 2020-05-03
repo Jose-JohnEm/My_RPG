@@ -103,5 +103,6 @@ void init_pnjs(game_t *game);
 void draw_questpnj(game_t *game);
 void init_msgbox(game_t *game);
 void draw_msg(game_t *game);
+void init_sound(game_t *game);
 
 #endif
