@@ -16,14 +16,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "game.h"
 
+#include "rpg/structures/item_struct.h"
+#include "game.h"
 #include "rpg/structures/pause_struct.h"
 #include "rpg/structures/animation_struct.h"
 #include "rpg/structures/map_struct.h"
 #include "rpg/structures/ennemy_struct.h"
 #include "rpg/structures/meteo_struct.h"
-#include "rpg/structures/item_struct.h"
 #include "rpg/pnj.h"
 typedef struct game
 {

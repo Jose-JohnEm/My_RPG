@@ -11,7 +11,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-
 typedef struct player
 {
     int hp;
@@ -19,6 +18,7 @@ typedef struct player
     int inv_open;
     int exp;
     int level;
+    int quest;
     sfMusic *expsound;
     sfTexture *t_inv;
     sfSprite *inv;
@@ -29,6 +29,7 @@ typedef struct player
     sfSprite *lvlup;
     sfText *text;
     sfText *textlvl;
+    p_target target;
 } player_t;
 
 typedef struct params

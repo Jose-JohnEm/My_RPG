@@ -100,5 +100,6 @@ void animation(game_t *game)
     }
     check_hitting(game);
     check_collision(game);
+    keys_handle(game);
     display_anim_sets(&game->animation, &game->window);
 }
