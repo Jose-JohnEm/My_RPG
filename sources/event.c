@@ -24,6 +24,18 @@ void event_inventory(game_t *game)
     }
 }
 
+void event_sound(game_t *game)
+{
+    if (game->game == -1) {
+        sfMusic_stop(game->sound.music);
+        sfMusic_play(game->sound.end);
+    }
+    if (game->game == -2) {
+        sfMusic_stop(game->sound.music);
+        sfMusic_play(game->sound.gameover);
+    }
+}
+
 void window_event(game_t *game, menu_t *menu)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
@@ -37,5 +49,6 @@ void window_event(game_t *game, menu_t *menu)
         if (game->game == 1)
             event_inventory(game);
         skip_intro(game);
+        event_sound(game);
     }
 }

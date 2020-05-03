@@ -24,25 +24,15 @@ void init_end(game_t *game, menu_t *menu)
 void draw_end(game_t *game, menu_t *menu)
 {
     if (game->game == -1) {
-        sfMusic_stop(game->sound.music);
-        sfMusic_play(game->sound.end);
         init_end(game, menu);
     }
     if (game->game == -2) {
-        sfMusic_stop(game->sound.music);
-        sfMusic_play(game->sound.gameover);
         init_game_over(game, menu);
     }
     sfSprite_setPosition(menu->logo, (sfVector2f){700, 100});
-    sfSprite_setPosition(menu->soundicon, (sfVector2f){25, 900});
     sfText_setPosition(menu->hud.score, (sfVector2f){580, 600});
-    if (game->mute == 0);
-        sfSprite_setTextureRect(menu->soundicon, (sfIntRect){0, 0, 175, 164});
-    if (game->mute == 1)
-        sfSprite_setTextureRect(menu->soundicon, (sfIntRect){177, 0, 165, 164});
     sfRenderWindow_drawSprite(game->window, menu->bg, NULL);
     draw_cloud(game);
     sfRenderWindow_drawSprite(game->window, menu->logo, NULL);
     sfRenderWindow_drawText(game->window, menu->hud.score, NULL);
-    sfRenderWindow_drawSprite(game->window, menu->soundicon, NULL);
 }

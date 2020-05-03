@@ -36,8 +36,9 @@ void create_window(game_t *game, menu_t *menu)
     sfMusic_play(game->music);
     while (sfRenderWindow_isOpen(game->window)) {
         window_event(game, menu);
-        if (game->player.hp <= 0)
+        if (game->player.hp <= 0) {
             game->game = -2;
+        }
         draw_window(game, menu);
     }
     my_destroy(game);
