@@ -19,17 +19,8 @@ void init_msgbox(game_t *game)
     sfText_setString(game->pnj.pnjtext, q_hello);
 }
 
-void select_msg(game_t *game)
-{
-    if (game->pnj.msgtype == 1)
-        sfText_setString(game->pnj.pnjtext, q_firstkey);
-    if (game->pnj.msgtype == 2)
-        sfText_setString(game->pnj.pnjtext, q_lastkey);
-}
-
 void draw_msg(game_t *game)
 {
-    select_msg(game);
     sfText_setPosition(game->pnj.pnjtext, (sfVector2f){500, 850});
     sfSprite_setPosition(game->pnj.boxmsg, (sfVector2f){400, 800});
     sfRenderWindow_drawSprite(game->window, game->pnj.boxmsg, NULL);

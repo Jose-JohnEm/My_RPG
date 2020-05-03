@@ -5,6 +5,4 @@
 ** pnj.h
 */
 
-#define q_hello "MASTER OWL -\n?! ... Are you the hero of the prophecy ?\nYou must find 3 key, go find the first one, she's in the south of our country !\nYou need to kill 15 skulls !"
-#define q_firstkey "MASTER OWL -\nWell done ! You got the first key, now go to south-east for the second key\nYou need to kill 15 skulls but care they are stronger !"
-#define q_lastkey "MASTER OWL -\nNice ! You must find the last key, I don't know where she is, good luck !\n You need to kill 5 witch"
+#define q_hello "MASTER OWL -\n YOU NEED TO SAVE THIS COUNTRY ! GET 3 KEYS"

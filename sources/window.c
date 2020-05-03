@@ -19,7 +19,6 @@ void draw_window(game_t *game, menu_t *menu)
         animation(game);
         ennemy(game);
         draw_hud(game);
-        make_levelup(game);
         draw_questpnj(game);
         gen_time(game);
         draw_pause(game);

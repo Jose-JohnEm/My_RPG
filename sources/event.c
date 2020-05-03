@@ -50,5 +50,6 @@ void window_event(game_t *game, menu_t *menu)
             event_inventory(game);
         skip_intro(game);
         event_sound(game);
+        make_levelup(game);
     }
 }
