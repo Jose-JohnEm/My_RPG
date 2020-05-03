@@ -50,8 +50,11 @@ MAP		=	sources/map/map.c							\
 
 MOVE	=	sources/movements/move.c					\
 
-COLLISION	=	sources/collision/collision.c			\
-				sources/collision/collide_settings.c	\
+COLLISION	=	sources/collision/collision.c					\
+				sources/collision/collide_settings.c			\
+				sources/collision/set_map_collision/set_col1.c	\
+				sources/collision/set_map_collision/set_col2.c	\
+				sources/collision/set_map_collision/set_col3.c	\
 
 ENNEMY		=	sources/ennemy/ennemy.c					\
 				sources/ennemy/init_ennemy.c			\
@@ -59,15 +62,12 @@ ENNEMY		=	sources/ennemy/ennemy.c					\
 				sources/ennemy/bad_girl_pattern.c		\
 				sources/ennemy/skull_bow_pattern.c		\
 				sources/ennemy/mob_attack.c				\
-				sources/ennemy/animate_mob.c			\
+				sources/ennemy/wait_for_new_attack.c	\
 
 METEO		=	sources/meteo/neige.c					\
 				sources/meteo/pluie.c					\
 
-ITEM		=	sources/items/init_inventory.c			\
-				sources/items/init_item.c				\
-				sources/items/inventory.c				\
-				sources/items/item.c					\
+ITEM		=	sources/items/init_item.c				\
 				sources/items/keys_handle.c				\
 
 CC	=	@gcc

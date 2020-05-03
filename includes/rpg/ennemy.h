@@ -30,7 +30,8 @@ void bad_girl_pattern(game_t *g, int i);
 
 /*------ bad_girl_pattern.c ------*/
 void skull_bow_attack(game_t *game, int i);
-void skull_launch_arrow(a_sk_bow *attack, char way, sfRenderWindow **win, sfSprite *ennemy);
+void skull_launch_arrow(a_sk_bow *attack, char way,
+                        sfRenderWindow **win, sfSprite *ennemy);
 
 
 /*------ mob_attack.c ------*/
@@ -38,7 +39,8 @@ g_ennemy bad_girl_attack(g_ennemy mob, sfRenderWindow **win);
 void skull_axe_attack(game_t *game, int i);
 
 
-/*------ animate_mob.c ------*/
+/*------ wait_for_new_attack.c ------*/
+void restart_clock_attack_sk_bow(sfClock **clock, int *ok, char *way);
 
 
 #endif

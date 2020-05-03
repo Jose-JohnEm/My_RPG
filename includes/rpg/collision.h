@@ -25,4 +25,21 @@ void my_strcpy(char *s1, char const *s2);
 char *my_strdup(char *str);
 
 
+/* ---- set_map_collision ---- */
+void set_col1(game_t *game);
+void set_col2(game_t *game);
+void set_col3(game_t *game);
+void set_col4(game_t *game);
+void set_col5(game_t *game);
+void set_col6(game_t *game);
+void set_col7(game_t *game);
+void set_col8(game_t *game);
+void set_col9(game_t *game);
+void set_col10(game_t *game);
+void set_col11(game_t *game);
+void set_col12(game_t *game);
+void set_col13(game_t *game);
+
+void big_map_collision_setter(game_t *game);
+
 #endif

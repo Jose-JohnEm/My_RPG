@@ -18,7 +18,8 @@ void check_for_player(g_ennemy *mob, g_anim *user, player_t *p)
 
     for (int i = 0; i < 4; i++)
         if (s_pos[i].y - 50 > u_pos.y - 100 && s_pos[i].y - 50 < u_pos.y + 100)
-            if (s_pos[i].x - 150 > u_pos.x - 100 && s_pos[i].x - 150 < u_pos.x + 100)
+            if (s_pos[i].x - 150 > u_pos.x - 100 &&
+                s_pos[i].x - 150 < u_pos.x + 100)
                 p->hp -= 2;
 }
 

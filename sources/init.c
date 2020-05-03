@@ -9,7 +9,7 @@
 
 void rpg(game_t *game, menu_t *menu)
 {
-    srand(1000);
+    srand(100);
     game->clock = sfClock_create();
     game->seconds = sfSeconds(0.1).microseconds;
     init_menu(game, menu);
@@ -24,7 +24,7 @@ void rpg(game_t *game, menu_t *menu)
     game->ennemy = init_ennemy();
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
-    map_col();
+    big_map_collision_setter(game);
     init_meteo(&game->pluie, &game->neige);
 }
 

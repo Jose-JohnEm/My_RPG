@@ -27,11 +27,12 @@ void set_rotate_arrow(char way, a_sk_bow *attack)
     }
 }
 
-void skull_launch_arrow(a_sk_bow *attack, char way, sfRenderWindow **win, sfSprite *ennemy)
+void skull_launch_arrow(a_sk_bow *attack, char way,
+                        sfRenderWindow **win, sfSprite *ennemy)
 {
     static int ok = 0;
     sfVector2f cur_pos = sfSprite_getPosition(ennemy);
-    
+
     cur_pos.x += 50;
     cur_pos.y += 50;
     if (ok == 0) {
@@ -77,20 +78,19 @@ void skull_bow_attack(game_t *game, int i)
     sfVector2f e_pos = sfSprite_getPosition(game->ennemy[i].mob);
     static int ok = 0;
     static char way = -1;
-    float time = sfTime_asSeconds(sfClock_getElapsedTime(game->ennemy[i].sk_attack.clock));
+    sfClock *clock = game->ennemy[i].sk_attack.clock;
+    float time = sfTime_asSeconds(sfClock_getElapsedTime(clock));
 
-    if (ok == 0 && time > 2) {
-        ok = 1;
-        sfClock_restart(game->ennemy[i].sk_attack.clock);
-        way = -1;
-    }
+    restart_clock_attack_sk_bow(&game->ennemy[i].sk_attack.clock, &ok, &way);
     do_skull_detect(u_pos, e_pos, &way, ok);
     if (way == -1)
         sfClock_restart(game->ennemy[i].sk_attack.clock);
     else
         ok = 0;
     if (ok == 0 && time < 2) {
-        skull_launch_arrow(&game->ennemy[i].sk_attack, way, &game->window, game->ennemy[i].mob);
-        does_skull_arrow_hurt_player(&game->ennemy[i].sk_attack, u_pos, &game->player.hp);
+        skull_launch_arrow(&game->ennemy[i].sk_attack, way,
+                            &game->window, game->ennemy[i].mob);
+        does_skull_arrow_hurt_player(&game->ennemy[i].sk_attack, u_pos,
+                                        &game->player.hp);
     }
 }

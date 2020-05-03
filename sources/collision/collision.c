@@ -50,10 +50,12 @@ void check_hitting(game_t *g)
     for (int i = 0; i < MONSTERS; i++) {
         e_pos = sfSprite_getPosition(g->ennemy[i].mob);
         cur = g->ennemy[i].pos;
-        if (cur.x1 + 1 == m_pos.x && cur.y1 + 1 == m_pos.y && a_pos.y + 50 > e_pos.y && a_pos.y + 50 < e_pos.y + 200)
+        if (cur.x1 + 1 == m_pos.x && cur.y1 + 1 == m_pos.y && a_pos.y + 50 >
+            e_pos.y && a_pos.y + 50 < e_pos.y + 200)
             if (a_pos.x + 50 > e_pos.x && a_pos.x + 50 < e_pos.x + 200) {
                 g->ennemy[i].pv -= 5;
-                sfSprite_setPosition(g->animation->arrow, (sfVector2f){3000, 3000});
+                sfSprite_setPosition(g->animation->arrow,
+                    (sfVector2f){3000, 3000});
                 grow_up_kill(g, g->ennemy[i].type, &g->ennemy[i].pv, i);
             }
     }

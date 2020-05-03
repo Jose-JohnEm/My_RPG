@@ -16,7 +16,8 @@ void disp_first_key(game_t *g)
         sfRenderWindow_drawSprite(g->window, g->player.target.key, NULL);
         if (u_pos.x + 50 > 700 && u_pos.x + 50 < 800)
             if (u_pos.y + 50 > 800 && u_pos.y + 50 > 900) {
-                sfSprite_setPosition(g->player.target.key, (sfVector2f) {-1000, -1000});
+                sfSprite_setPosition(g->player.target.key,
+                                    (sfVector2f) {-1000, -1000});
                 g->player.quest = 2;
             }
     }

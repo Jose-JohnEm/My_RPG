@@ -14,7 +14,7 @@
 
 /*----------- pause.c ---------*/
 void draw_pause(game_t *game);
-void pause_caption(sfRenderWindow **window, sfEvent event, 
+void pause_caption(sfRenderWindow **window, sfEvent event,
                     g_pause *content, int *in_pause);
 
 

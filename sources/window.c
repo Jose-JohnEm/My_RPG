@@ -17,14 +17,12 @@ void draw_window(game_t *game, menu_t *menu)
     if (game->game == 1 || game->game == 2) {
         draw_map(game);
         animation(game);
-        if (game->game == 1)
-            ennemy(game);
+        ennemy(game);
         draw_hud(game);
         make_levelup(game);
         draw_questpnj(game);
         gen_time(game);
         draw_pause(game);
-        //draw_inventory(game);
     }
     if (game->game > 89) {
         draw_intro(game);

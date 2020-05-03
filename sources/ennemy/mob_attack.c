@@ -7,24 +7,33 @@
 
 #include "rpg.h"
 
+void move_spikes_bad_girl(a_bad_girl *a)
+{
+    sfSprite_move(a->up, (sfVector2f){0, -15});
+    sfSprite_move(a->down, (sfVector2f){0, 15});
+    sfSprite_move(a->right, (sfVector2f){15, 0});
+    sfSprite_move(a->left, (sfVector2f){-15, 0});
+}
+
+void re_init_spikes_position(a_bad_girl *a, int *ok, sfVector2f cur_pos)
+{
+    sfSprite_setPosition(a->up, cur_pos);
+    sfSprite_setPosition(a->down, cur_pos);
+    sfSprite_setPosition(a->left, cur_pos);
+    sfSprite_setPosition(a->right, cur_pos);
+    *ok = 1;
+}
+
 g_ennemy bad_girl_attack(g_ennemy mob, sfRenderWindow **win)
 {
     static int ok = 0;
     sfVector2f cur_pos = sfSprite_getPosition(mob.mob);
-    
+
     cur_pos.x += 100;
     cur_pos.y += 100;
-    if (ok == 0) {
-        sfSprite_setPosition(mob.attack.up, cur_pos);
-        sfSprite_setPosition(mob.attack.down, cur_pos);
-        sfSprite_setPosition(mob.attack.left, cur_pos);
-        sfSprite_setPosition(mob.attack.right, cur_pos);
-        ok = 1;
-    }
-    sfSprite_move(mob.attack.up, (sfVector2f){0, -15});
-    sfSprite_move(mob.attack.down, (sfVector2f){0, 15});
-    sfSprite_move(mob.attack.right, (sfVector2f){15, 0});
-    sfSprite_move(mob.attack.left, (sfVector2f){-15, 0});
+    if (ok == 0)
+        re_init_spikes_position(&mob.attack, &ok, cur_pos);
+    move_spikes_bad_girl(&mob.attack);
     if (ok == 1) {
         sfRenderWindow_drawSprite(*win, mob.attack.up, NULL);
         sfRenderWindow_drawSprite(*win, mob.attack.down, NULL);

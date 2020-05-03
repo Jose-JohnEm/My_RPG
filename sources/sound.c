@@ -19,19 +19,13 @@ void sound_handling(game_t *game)
     init_sound(game);
     if (game->game == 0)
         sfMusic_play(game->music);
-    if (game->game == 1) {
-        //sfMusic_play(sound)
-    }
     if (game->game == 3) {
         sfMusic_play(game->sound.boss);
-        //sfMusic_stop(sound)
     }
     if (game->game == -1) {
         sfMusic_play(game->sound.end);
-        //sfMusic_stop(sound)
     }
     if (game->game == -2) {
         sfMusic_play(game->sound.gameover);
-        //sfMusic_stop(sound)
     }
 }

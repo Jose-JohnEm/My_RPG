@@ -36,7 +36,8 @@ g_ennemy init_skull_axe(vec4 pos)
     sfSprite_setTexture(mob.mob, mob.mob_t, sfFalse);
     sfSprite_setTextureRect(mob.mob, mob.rect);
     mob.pos = pos;
-    sfSprite_setPosition(mob.mob, (sfVector2f){pos.x2 * 90 + SQ_L, pos.y2 * 90 + SQ_U});
+    sfSprite_setPosition(mob.mob, (sfVector2f){pos.x2 * 90 + SQ_L,
+                                                pos.y2 * 90 + SQ_U});
     sfSprite_setScale(mob.mob, (sfVector2f){3, 3});
     mob.type = SKULL_AXE;
     return mob;
@@ -53,7 +54,8 @@ g_ennemy init_bad_girl(vec4 pos)
     sfSprite_setTexture(mob.mob, mob.mob_t, sfFalse);
     sfSprite_setTextureRect(mob.mob, mob.rect);
     mob.pos = pos;
-    sfSprite_setPosition(mob.mob, (sfVector2f){pos.x2 * 90 + SQ_L, pos.y2 * 90 + SQ_U});
+    sfSprite_setPosition(mob.mob, (sfVector2f){pos.x2 * 90 + SQ_L,
+                                                pos.y2 * 90 + SQ_U});
     sfSprite_setScale(mob.mob, (sfVector2f){2, 2});
     mob.attack = init_bad_girl_attack();
     mob.type = BAD_GIRL;
@@ -78,7 +80,8 @@ g_ennemy *init_ennemy(void)
     mob[0] = init_from_type(SKULL_AXE, (vec4){1, 0, 9, 9});
     mob[1] = init_from_type(BAD_GIRL, (vec4){1, 1, 5, 5});
     for (int i = 2; i < MONSTERS; i++) {
-        mob[i] = init_from_type(SKULL_BOW, (vec4){0, rand() % 6 + 1, rand() % 10, rand() % 10});
+        mob[i] = init_from_type(SKULL_BOW, (vec4){0, rand() % 6 + 1,
+                                                rand() % 10, rand() % 10});
     }
     return mob;
 }

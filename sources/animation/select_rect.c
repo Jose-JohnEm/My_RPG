@@ -52,3 +52,24 @@ void select_rect_y(g_anim **anim, int ism)
         translate_top(anim);
     (*anim)->rect.top = 35 + (*anim)->way * YRECT;
 }
+
+void check_way_arrow(game_t *g, char way)
+{
+    if (way == LEFT) {
+        sfSprite_setRotation(g->animation->arrow, 90);
+        sfSprite_move(g->animation->arrow, (sfVector2f){30, 0});
+    }
+    if (way == 0) {
+        sfSprite_setRotation(g->animation->arrow, 180);
+        sfSprite_move(g->animation->arrow, (sfVector2f){0, 30});
+    }
+    if (way == RIGHT) {
+        sfSprite_setRotation(g->animation->arrow, 270);
+        sfSprite_move(g->animation->arrow, (sfVector2f){-30, 0});
+    }
+    if (way == UP) {
+        sfSprite_setRotation(g->animation->arrow, 0);
+        sfSprite_move(g->animation->arrow, (sfVector2f){0, -30});
+    }
+    sfRenderWindow_drawSprite(g->window, g->animation->arrow, NULL);
+}
