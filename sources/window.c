@@ -17,7 +17,8 @@ void draw_window(game_t *game, menu_t *menu)
     if (game->game == 1 || game->game == 2) {
         draw_map(game);
         animation(game);
-        ennemy(game);
+        if (game->game == 1)
+            ennemy(game);
         draw_hud(game);
         make_levelup(game);
         draw_questpnj(game);
