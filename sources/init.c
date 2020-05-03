@@ -25,6 +25,7 @@ void rpg(game_t *game, menu_t *menu)
     game->animation = init_animation();
     game->event.key.code = sfKeyDown;
     map_col();
+    init_meteo(&game->pluie, &game->neige);
 }
 
 void init_text(menu_t *menu)

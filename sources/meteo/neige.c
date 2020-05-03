@@ -9,7 +9,7 @@
 
 void neige(game_t *win, neige_t *n)
 {
-    n->offset2.y += 0.01;
+    n->offset2.y += 2;
             if (n->offset2.y >= 1080) {
             n->offset2.y = -2160;
             sfSprite_setPosition(n->spriteback2, n->offset2);
