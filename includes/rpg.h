@@ -23,6 +23,7 @@
 #include "rpg/structures/map_struct.h"
 #include "rpg/structures/ennemy_struct.h"
 #include "rpg/structures/meteo_struct.h"
+#include "rpg/structures/item_struct.h"
 #include "rpg/pnj.h"
 typedef struct game
 {
@@ -58,6 +59,7 @@ typedef struct game
 #include "rpg/movements.h"
 #include "rpg/collision.h"
 #include "rpg/ennemy.h"
+#include "rpg/item.h"
 
 int init_rpg(void);
 void get_colision(game_t *game);

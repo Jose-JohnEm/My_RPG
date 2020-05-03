@@ -63,6 +63,11 @@ ENNEMY		=	sources/ennemy/ennemy.c					\
 METEO		=	sources/meteo/neige.c					\
 				sources/meteo/pluie.c					\
 
+ITEM		=	sources/items/init_inventory.c			\
+				sources/items/init_item.c				\
+				sources/items/inventory.c				\
+				sources/items/item.c					\
+
 CC	=	@gcc
 
 CFLAGS	=	-I ./includes/ -l csfml-window -l csfml-graphics -l csfml-system -lcsfml-audio -g3 -Ofast
@@ -77,6 +82,7 @@ OBJ	= 	$(SRC:.c=.o)		\
 		$(ENNEMY:.c=.o)		\
 		$(PNJ:.c=.o)		\
 		$(METEO:.c=.o)		\
+		$(ITEM:.c=.o)		\
 
 NAME	=	my_rpg
 
