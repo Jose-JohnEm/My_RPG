@@ -25,8 +25,6 @@ void select_msg(game_t *game)
         sfText_setString(game->pnj.pnjtext, q_firstkey);
     if (game->pnj.msgtype == 2)
         sfText_setString(game->pnj.pnjtext, q_lastkey);
-    if (game->pnj.msgtype == 3)
-        sfText_setString(game->pnj.pnjtext, q_boss);
 }
 
 void draw_msg(game_t *game)
