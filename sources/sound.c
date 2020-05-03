@@ -16,7 +16,6 @@ void init_sound(game_t *game)
 
 void sound_handling(game_t *game)
 {
-    init_sound(game);
     if (game->game == 0)
         sfMusic_play(game->music);
     if (game->game == 3) {

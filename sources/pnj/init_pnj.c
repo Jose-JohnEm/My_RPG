@@ -23,5 +23,7 @@ void init_questpnj(game_t *game)
 
 void init_pnjs(game_t *game)
 {
+    game->pnj.msgtype = 1;
+    game->pnj.donjon = (vec4){0, 0, 0, 0};
     init_questpnj(game);
 }
