@@ -12,11 +12,12 @@ void enable_pnjmsg(game_t *game)
     sfVector2f questpos = sfSprite_getPosition(game->pnj.pnjquest);
     sfVector2f player = sfSprite_getPosition(game->animation->perso);
     sfVector2i map = game->map->position;
-    vec4 pnjquest = {1, 1, 3, 5};;
+    vec4 pnjquest = {1, 1, 3, 5};
 
     if (pnjquest.x1 == map.x && pnjquest.y1 == map.y) {
-        if (questpos.x - 100 >= player.x && questpos.x  + 100 <= player.x)
-            printf("OUI");
+        if (player.x + 50 >= questpos.x - 50 && player.x <= questpos.x + 100
+            && player.y + 50 >= questpos.y -50 && player.y + 50 <= questpos.y + 150)
+            draw_msg(game);
     }
 }
 

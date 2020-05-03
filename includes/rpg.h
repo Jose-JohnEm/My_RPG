@@ -99,5 +99,7 @@ char *itoa(int nb);
 void disp_pnj(game_t *game);
 void init_pnjs(game_t *game);
 void draw_questpnj(game_t *game);
+void init_msgbox(game_t *game);
+void draw_msg(game_t *game);
 
 #endif
