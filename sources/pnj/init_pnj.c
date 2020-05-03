@@ -16,7 +16,9 @@ void init_questpnj(game_t *game)
     game->pnj.donjon = (vec4){1, 1, 1, 0};
     game->pnj.box = (vec4){0, 0, 2, 0};
     set_col(0, 0, 4, 2)
-    sfSprite_setPosition(game->pnj.pnjquest, (sfVector2f){SQ_L - 50 + game->pnj.quest.x2 * 90, SQ_U - 70 + game->pnj.quest.y2 * 90});
+    sfSprite_setPosition(game->pnj.pnjquest,
+        (sfVector2f){SQ_L - 50 + game->pnj.quest.x2 * 90, SQ_U - 70
+        + game->pnj.quest.y2 * 90});
 }
 
 void init_pnjs(game_t *game)

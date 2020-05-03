@@ -16,7 +16,8 @@ void enable_pnjmsg(game_t *game)
 
     if (pnjquest.x1 == map.x && pnjquest.y1 == map.y) {
         if (player.x + 50 >= questpos.x - 50 && player.x <= questpos.x + 100
-            && player.y + 50 >= questpos.y - 50 && player.y + 50 <= questpos.y + 150)
+            && player.y + 50 >= questpos.y - 50
+            && player.y + 50 <= questpos.y + 150)
             draw_msg(game);
     }
 }
@@ -24,7 +25,7 @@ void enable_pnjmsg(game_t *game)
 void draw_questpnj(game_t *game)
 {
     enable_pnjmsg(game);
-    if (game->pnj.quest.x1 == game->map->position.x 
+    if (game->pnj.quest.x1 == game->map->position.x
         && game->pnj.quest.y1 == game->map->position.y)
         sfRenderWindow_drawSprite(game->window, game->pnj.pnjquest, NULL);
 }
