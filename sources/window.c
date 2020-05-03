@@ -39,6 +39,7 @@ void create_window(game_t *game, menu_t *menu)
         if (game->player.hp <= 0) {
             game->game = -2;
         }
+        is_finish(game, menu);
         draw_window(game, menu);
     }
     my_destroy(game);

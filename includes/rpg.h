@@ -103,5 +103,6 @@ void draw_questpnj(game_t *game);
 void init_msgbox(game_t *game);
 void draw_msg(game_t *game);
 void init_sound(game_t *game);
+void is_finish(game_t *game, menu_t *menu);
 
 #endif

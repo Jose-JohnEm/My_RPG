@@ -22,6 +22,18 @@ void init_end(game_t *game, menu_t *menu)
     sfSprite_setTexture(menu->logo, menu->t_logo, sfTrue);
 }
 
+void is_finish(game_t *game, menu_t *menu)
+{
+    sfVector2f player = sfSprite_getPosition(game->animation->perso);
+    sfVector2i map = game->map->position;
+    vec4 playermap = {1, 1, 3, 5};
+
+    if (playermap.x1 == map.x && playermap.y1 == map.y) {
+        if (game->player.quest == 4)
+            game->game = -1;
+    }
+}
+
 void draw_end(game_t *game, menu_t *menu)
 {
     if (game->game == -1) {
