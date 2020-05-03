@@ -37,6 +37,17 @@ void grow_up_kill(game_t *g, char type, int *pv, int i)
         g->player.target.sk_bow++;
         *pv = -100;
         sfSprite_setPosition(g->ennemy[i].mob, (sfVector2f){2000, 2000});
+        g->player.exp += 10;
+    } if (*pv <= 0 && *pv > -50 && type == SKULL_AXE) {
+        g->player.target.sk_axe++;
+        *pv = -100;
+        sfSprite_setPosition(g->ennemy[i].mob, (sfVector2f){2000, 2000});
+        g->player.exp += 20;
+    } if (*pv <= 0 && *pv > -50 && type == BAD_GIRL) {
+        g->player.target.bad_girl++;
+        *pv = -100;
+        sfSprite_setPosition(g->ennemy[i].mob, (sfVector2f){2000, 2000});
+        g->player.exp += 50;
     }
 }
 
@@ -57,8 +68,11 @@ void check_hitting(game_t *g)
                 sfSprite_setPosition(g->animation->arrow,
                     (sfVector2f){3000, 3000});
                 grow_up_kill(g, g->ennemy[i].type, &g->ennemy[i].pv, i);
+                g->player.hp += 25;
             }
     }
+    if (g->player.hp > 100)
+        g->player.hp = 100;
 }
 
 void check_collision(game_t *game)

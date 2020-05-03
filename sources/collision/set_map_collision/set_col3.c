@@ -10,11 +10,11 @@
 void set_col11(game_t *game)
 {
     set_col(1, 3, 3, 8);
-    set_col(1, 3, 3, 9);          
+    set_col(1, 3, 3, 9);
     set_col(6, 2, 0, 7);
     set_col(6, 2, 1, 7);
     set_col(6, 2, 1, 8);
-    set_col(6, 2, 1, 9);                  
+    set_col(6, 2, 1, 9);
     set_col(6, 3, 1, 3);
     set_col(6, 3, 2, 3);
     set_col(6, 3, 3, 3);
@@ -64,7 +64,7 @@ void set_col13(game_t *game)
     set_col(6, 4, 3, 6);
     set_col(6, 4, 3, 7);
     set_col(6, 4, 3, 8);
-    set_col(6, 4, 3, 9);             
+    set_col(6, 4, 3, 9);
     set_col(6, 5, 3, 3);
     set_col(6, 5, 3, 4);
     set_col(6, 5, 3, 5);
